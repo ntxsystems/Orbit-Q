@@ -32,6 +32,13 @@ jobs:
       - name: Install MkDocs Material
         run: pip install mkdocs-material
 
+      - name: Stage documentation
+        run: |
+          mkdir -p docs
+          cp README.md docs/index.md
+          cp Orbit-Q_Datasheet.pdf docs/ 2>/dev/null || true
+          cp -r images docs/ 2>/dev/null || true
+
       - name: Build documentation
         run: mkdocs build
 
