@@ -1,1 +1,1 @@
-Board Image
+board image
