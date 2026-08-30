@@ -1,0 +1,14 @@
+site_name: Orbit-Q Documentation
+site_description: Official hardware documentation, pinout guides, and code examples for Orbit-Q.
+site_author: NTX Systems Pvt. Ltd.
+site_url: https://ntxsystems.github.io/Orbit-Q/
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: deep orange
+
+nav:
+  - Home: README.md
+  - Datasheet: Orbit-Q_Datasheet.pdf
