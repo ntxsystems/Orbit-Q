@@ -8,7 +8,7 @@ To use the STM32F series microcontroller with the Arduino IDE, you need to insta
 
 Open the Preferences window by navigating to **File > Preferences**.
 
-![Arduino Preferences Menu](../images/image-01.png)
+![Step 1](images/image-01.png)
 
 ---
 
@@ -18,9 +18,10 @@ In the **"Additional Boards Manager URLs"** field, paste the official STM32 inde
 
 ```text
 [https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json](https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json)
+
 ```
 
-![Arduino Preferences Menu](../images/image-02.png)
+![Step 1](images/image-02.png)
 
 ---
 
@@ -32,7 +33,7 @@ Search for "STM32 MCU based boards".
 
 Click Install.
 
-![Arduino Preferences Menu](../images/image-03.png)
+![Step 1](images/image-03.png)
 
 ---
 
@@ -52,10 +53,13 @@ Board: Select STM32 MCU based boards - Your Series, e.g., Generic STM32F4 series
 
 Board Part Number: Choose your specific chip (e.g., Generic F405RGTx).
 
-![Arduino Preferences Menu](../images/image-04.png)
+![Step 1](images/image-04.png)
 
 Upload Method: This depends on your hardware connection:
+
 ST-Link: Best for debugging; requires an ST-Link V2 programmer.
+
 STM32CubeProgrammer (Serial): Used with a USB-to-TTL adapter.
+
 STM32CubeProgrammer (DFU): Used if your board has a native USB port and DFU bootloader.
 
