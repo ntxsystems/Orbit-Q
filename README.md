@@ -7,7 +7,7 @@ Official documentation, datasheets, pinout guides, and code examples for the Orb
 
 ## Quick Resources
 
-* 📄 **Datasheet:** [Download Orbit-Q Datasheet PDF](./Orbit-Q_Datasheet.pdf)
+* 📄 **Datasheet:** [Download Orbit-Q Datasheet PDF](./Orbit-Q%20Datasheet.pdf)
 * 📷 **Board Photos:** [Browse high-resolution imagery on GitHub](https://github.com/ntxsystems/Orbit-Q/tree/main/images)
 
 ---
