@@ -2,13 +2,13 @@
 Official documentation, datasheets, pinout guides, and code examples for the Orbit-Q development board by NTX SYSTEMS
 
 ![Orbit-Q Board](images/image_9cbed628.png)
+
 ---
 
 ## Quick Resources
 
-* 📄 **Datasheet:** [Download Orbit-Q Datasheet PDF](Orbit-Q_Datasheet.pdf) <!-- Update filename if different -->
-  
-* 📷 **Board Photos:** Browse high-resolution imagery in [`images/`](images/)
+* 📄 **Datasheet:** [Download Orbit-Q Datasheet PDF](./Orbit-Q_Datasheet.pdf)
+* 📷 **Board Photos:** [Browse high-resolution imagery on GitHub](https://github.com/ntxsystems/Orbit-Q/tree/main/images)
 
 ---
 
