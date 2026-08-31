@@ -51,10 +51,16 @@
   border-color: var(--md-accent-fg-color);
 }
 
-/* Make Buttons Glow Orange on Hover */
-.md-typeset .md-button:hover,
-.md-typeset .md-button.md-button--primary:hover {
+/* Outline buttons (non-primary): subtle tint on hover */
+.md-typeset .md-button:not(.md-button--primary):hover {
   background-color: var(--md-accent-fg-color--transparent);
   color: var(--md-accent-fg-color) !important;
   border-color: var(--md-accent-fg-color);
+}
+
+/* Primary button: deepen instead of fading to transparent, so it stays legible on hover */
+.md-typeset .md-button--primary:hover {
+  background-color: #e8551f;
+  color: #ffffff !important;
+  border-color: #e8551f;
 }
