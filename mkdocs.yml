@@ -49,10 +49,12 @@ markdown_extensions:
 
 nav:
   - Home: README.md
-  - Gallery: images/readme.md
-  - Datasheet: "Orbit-Q Datasheet.pdf"
-  - Tutorials:
-      - MCU Cards:
-          - STM32F405:
-              - Arduino IDE:
-                  - Getting Started: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Getting Started/text.md"
+  - ORBIT-Q:
+      - Overview: orbit-q-overview.md
+      - Gallery: images/README.md
+      - Datasheet: "Orbit-Q Datasheet.pdf"
+      - Tutorials:
+          - MCU Cards:
+              - STM32F405:
+                  - Arduino IDE:
+                      - Getting Started: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Getting Started/text.md"
