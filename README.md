@@ -25,8 +25,17 @@ Many development boards are built around a single processor and provide only the
 ![Orbit-Q Board](images/Yellow%20and%20Blue%20Modern%20Logistics%20Company%20Profile%20A4%20Document.png)
 
 ---
+That's the problem ORBIT-Q was built to close, not just "make a board." The design decisions map directly to the findings above:
 
+- Onboard ST-Link + CP2102 — removes the external-programmer step that keeps people off STM32; the CP2102 UART bridge isn't STM32-specific, so it's useful with other MCU cards too.
+- Proper onboard power delivery (24W, dual-rail) — removes the "every project needs its own supply" problem common to all the boards above.
+- OLED display, addressable LEDs, microSD — these are the peripherals that show up in most real projects anyway (status output, visual feedback, data logging), so they're built in rather than breadboarded each time.
+- M.2 swappable MCU card — the real fragmentation problem isn't Arduino vs. STM32 vs. ESP32, it's that switching between them means rebuilding your whole setup. Making the MCU itself the only part that swaps solves that directly.The goal wasn't just to close the gap — it was to close it in a way that actually fits the market. A price-sensitive market doesn't just want a cheaper board; it wants a lower total cost to get to a working setup. Comparing bare board prices misses that most of the real cost is external — a programmer, a power supply, breadboarded peripherals for every project. Folding those into one board changes the comparison from "board vs. board" to "total setup cost vs. total setup cost, " and that's where the price argument actually holds.
 ## Quick Resources
+
+The card system does something similar for the learning curve. On Arduino or ESP32, moving to a more capable architecture usually means starting over on a new board, new wiring, new tooling. On ORBIT-Q, the same carrier carries you from a basic validation-tier MCU card to a flagship-tier one — the STM32F103 card to the STM32F405 and beyond — without rebuilding anything. That matters specifically because STM32 is the more relevant architecture for real unmanned/embedded work and stays underlearned for exactly the setup-friction reasons above.The result is a single board that carries everything a project usually needs onboard, with the MCU as the one modular part — the same model a desktop PC uses: change the part that needs changing (CPU/GPU), keep everything else (power supply, case, peripherals) as-is.
+
+
 
 * 📄 **Datasheet:** [Download Orbit-Q Datasheet PDF](./Orbit-Q%20Datasheet.pdf)
 * 📷 **Board Photos:** [Browse high-resolution imagery on GitHub](https://github.com/ntxsystems/Orbit-Q/tree/main/images)
