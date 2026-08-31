@@ -1,30 +1,43 @@
 site_name: NTX SYSTEMS
 site_description: Official hardware documentation and resources for Orbit-Q by NTX Systems.
+site_author: NTX Systems Pvt. Ltd.
 site_url: https://ntxsystems.github.io/Orbit-Q/
+
+repo_url: https://github.com/ntxsystems/Orbit-Q
+repo_name: ntxsystems/Orbit-Q
 
 theme:
   name: material
   palette:
-    # Light mode
     - scheme: default
-      primary: indigo
+      primary: custom
       accent: deep orange
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    # Dark mode
     - scheme: slate
-      primary: indigo
+      primary: custom
       accent: deep orange
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
   features:
-    - navigation.tabs          # Top navigation bar like Bootstrap
-    - navigation.sections      # Clean grouped sidebar sections
-    - navigation.top           # Back-to-top button on long pages
-    - search.suggest           # Instant search suggestions
-    - content.code.copy        # "Copy code" button on code blocks
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
   - Home: README.md
