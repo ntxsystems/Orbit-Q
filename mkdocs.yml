@@ -1,13 +1,30 @@
 site_name: NTX SYSTEMS
 site_description: Official hardware documentation and resources for Orbit-Q by NTX Systems.
-site_author: NTX Systems Pvt. Ltd.
 site_url: https://ntxsystems.github.io/Orbit-Q/
 
 theme:
   name: material
   palette:
-    primary: indigo
-    accent: deep orange
+    # Light mode
+    - scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs          # Top navigation bar like Bootstrap
+    - navigation.sections      # Clean grouped sidebar sections
+    - navigation.top           # Back-to-top button on long pages
+    - search.suggest           # Instant search suggestions
+    - content.code.copy        # "Copy code" button on code blocks
 
 nav:
   - Home: README.md
