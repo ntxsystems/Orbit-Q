@@ -13,7 +13,7 @@ theme:
     accent: deep orange
 
 nav:
-  - Home: index.md
+  - Home: README.md
   - Tutorials:
       - MCU Cards:
           - STM32F405:
