@@ -22,6 +22,10 @@ Many development boards are built around a single processor and provide only the
 
 ---
 
+![Orbit-Q Board](images/Yellow%20and%20Blue%20Modern%20Logistics%20Company%20Profile%20A4%20Document.png)
+
+---
+
 ## Quick Resources
 
 * 📄 **Datasheet:** [Download Orbit-Q Datasheet PDF](./Orbit-Q%20Datasheet.pdf)
