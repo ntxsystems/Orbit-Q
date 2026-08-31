@@ -51,7 +51,7 @@ nav:
   - Home: README.md
   - ORBIT-Q:
       - Overview: orbit-q-overview.md
-      - Gallery: images/README.md
+      - Gallery: images/readme.md
       - Datasheet: "Orbit-Q Datasheet.pdf"
       - Tutorials:
           - MCU Cards:
