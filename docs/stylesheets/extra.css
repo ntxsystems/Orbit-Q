@@ -32,3 +32,29 @@
 .md-header {
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
+
+/* Fix Link Colors */
+.md-typeset a {
+  color: var(--md-accent-fg-color);
+}
+
+/* Fix Standard Buttons (Like 'Board Photos' and 'View on GitHub') */
+.md-typeset .md-button {
+  color: var(--md-default-fg-color); /* Automatically adapts: white in dark mode, dark in light mode */
+  border-color: var(--md-default-fg-color);
+}
+
+/* Fix Primary Buttons (Like 'Download Datasheet') */
+.md-typeset .md-button.md-button--primary {
+  background-color: var(--md-accent-fg-color);
+  color: #ffffff !important; /* Forces white text so it pops on the orange button */
+  border-color: var(--md-accent-fg-color);
+}
+
+/* Make Buttons Glow Orange on Hover */
+.md-typeset .md-button:hover,
+.md-typeset .md-button.md-button--primary:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+  color: var(--md-accent-fg-color) !important;
+  border-color: var(--md-accent-fg-color);
+}
