@@ -31,7 +31,7 @@ Many development boards are built around a single processor and provide only the
 
 ---
 
-### Designing for the Market Reality
+## Designing for the Market Reality
 
 That's the problem ORBIT-Q was built to close, not just "make a board." The design decisions map directly to the findings above:
 
