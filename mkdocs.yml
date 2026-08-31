@@ -3,6 +3,9 @@ site_description: Official hardware documentation and resources for Orbit-Q by N
 site_author: NTX Systems Pvt. Ltd.
 site_url: https://ntxsystems.github.io/Orbit-Q/
 
+# Tells MkDocs to read files from the repository root
+docs_dir: .
+
 theme:
   name: material
   palette:
@@ -11,3 +14,8 @@ theme:
 
 nav:
   - Home: index.md
+  - Tutorials:
+      - MCU Cards:
+          - STM32F405:
+              - Arduino IDE:
+                  - Getting Started: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Getting Started/text.md"
