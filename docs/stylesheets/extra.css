@@ -76,4 +76,17 @@
   color: inherit;
 }
 
+/* Fix invisible active table-of-contents links in dark mode */
+.md-nav__link--active,
+.md-nav__link[aria-current="page"] {
+  color: var(--md-accent-fg-color) !important;
+}
+
+.md-nav--secondary .md-nav__link--active {
+  color: var(--md-accent-fg-color) !important;
+  font-weight: 700;
+}
+
+
+
 
