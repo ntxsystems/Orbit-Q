@@ -64,3 +64,16 @@
   color: #ffffff !important;
   border-color: #e8551f;
 }
+
+/* Ensure selected text stays visible in dark mode */
+[data-md-color-scheme="slate"] ::selection {
+  background-color: #ff6b3560;
+  color: #ffffff;
+}
+
+::selection {
+  background-color: #ff6b3540;
+  color: inherit;
+}
+
+
