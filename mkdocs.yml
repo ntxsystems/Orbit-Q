@@ -61,6 +61,9 @@ nav:
                   - Arduino IDE:
                       - Getting Started: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Getting Started/text.md"
                       - Blink Example: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Blink-Example/text.md"
+              -  STM32F103:
+                 - Arduino IDE:
+                      - Getting Started: "Tutorials/MCU-Cards/STM32F103/Arduino-IDE/Getting-Started/text.md"
   - Sparrow Soccer Drone:
       - Overview: Sparrow-Drone/readme.md
       - Gallery: Sparrow-Drone/images/readme.md
