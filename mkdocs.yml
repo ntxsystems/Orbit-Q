@@ -51,24 +51,14 @@ markdown_extensions:
 
 nav:
   - Home: README.md
-  - ORBIT-Q:
-      - Overview: orbit-q-overview.md
-      - Gallery: images/readme.md
-      - Datasheet: "Orbit-Q Datasheet.pdf"
-      - Tutorials:
-          - MCU Cards:
-              -  STM32F103:
-                  - Arduino IDE:
-                      - Getting Started: "Tutorials/MCU-Cards/STM32F103/Arduino-IDE/Getting Started/text.md"
-              - STM32F405:
-                  - Arduino IDE:
-                      - Getting Started: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Getting Started/text.md"
-                      - Blink Example: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Blink-Example/text.md"
-  - Sparrow Soccer Drone:
-      - Overview: Sparrow-Drone/readme.md
-      - Gallery: Sparrow-Drone/images/readme.md
-      - Docs:
-          - Overview: Sparrow-Drone/docs/readme.md
-          - Specifications: Sparrow-Drone/docs/specifications/readme.md
-          - Betaflight: Sparrow-Drone/docs/Beta-Flight/readme.md
-          - ArduPilot: Sparrow-Drone/docs/Ardupilot/readme.md
+  - Gallery: images/readme.md
+  - Datasheet: "Orbit-Q Datasheet.pdf"
+  - Tutorials:
+      - MCU Cards:
+          - STM32F103:
+              - Arduino IDE:
+                  - Getting Started: "Tutorials/MCU-Cards/STM32F103/Arduino-IDE/Getting Started/text.md"
+          - STM32F405:
+              - Arduino IDE:
+                  - Getting Started: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Getting Started/text.md"
+                  - Blink Example: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Blink-Example/text.md"
