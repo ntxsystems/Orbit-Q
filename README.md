@@ -18,11 +18,19 @@ NTX Systems designs and develops modular embedded hardware and flight platforms 
 
     [:octicons-arrow-right-24: Explore ORBIT-Q](orbit-q-overview.md)
 
+-   :material-quadcopter: **Sparrow Soccer Drone**
+
+    ---
+
+    A 250g-class racing drone platform built for Betaflight and ArduPilot.
+
+    [:octicons-arrow-right-24: Explore Sparrow](Sparrow-Drone/readme.md)
+
 </div>
 
 ---
 
-More products, including flight controllers and UAV platforms, will be added here as documentation is finalized.
+More products, including flight controllers, will be added here as documentation is finalized.
 
 ## Company
 
