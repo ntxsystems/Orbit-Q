@@ -77,31 +77,32 @@ If Arduino IDE reports `No DFU device found` on Windows, download **Zadig**, sel
 
 ## 3. ST-Link V2 / SWD Method (Hardware Debugger)
 
-Flashing via the **SWD (Serial Wire Debug)** interface connects an external ST-Link programmer to the onboard header.
+Flashing via the SWD (Serial Wire Debug) interface utilizes the Orbit-Q development platform's onboard ST-LINK debugger, which is based on an STM32F103 microcontroller[cite: 2]. This provides a dedicated programming and debugging interface for the installed M.2 microcontroller module without the need for additional external hardware[cite: 2].
 
-!!! tip "No Boot Switch Toggling Required"
-SWD programming works while the board remains in regular operational mode (`NORMAL / OFF`). You do not need to toggle the Boot Slide Switch or force bootloader mode.
-
-### Pinout Connection
-
-| ST-Link V2 Pin | Orbit-Q Header Pin | Description |
-| :--- | :--- | :---|
-| **3V3** |	3V3	| Target Power Reference |
-| **SWCLK** |	PA14	| Serial Wire Clock |
-| **SWDIO** |	PA13	| Serial Wire Data Input/Output |
-| **GND** |	GND	| Common Ground |
+!!! tip "No External Wiring or Boot Switch Toggling Required"
+    The Serial Wire Debug lines are internally connected (SWCLK to PIN 5 and SWDIO to PIN 6 on Header A), meaning no jumper configuration is required during normal operation[cite: 2]. Additionally, SWD programming works seamlessly while the board remains in its standard operational mode (NORMAL / OFF).
 
 ### Arduino IDE Setup
 
-| Menu Item | Selected | SettingNotes |
-| :--- | :--- | :---|
-| **Board** | `Generic STM32F4 series` | Base core package |
-| **Board part number** | `STM32F405RGTx` | Target MCU variant |
-| **Upload method** | `STM32CubeProgrammer (SWD)` | Uses ST-Link programmer probe |
-| **Port** | **Not Required* | Communicates via ST-Link USB driver |
+| Menu Item | Selected Setting | Notes |
+| :--- | :--- | :--- |
+| **Board** | Generic STM32F4 series | Base core package |
+| **Board part number** | STM32F405RGTx | Target MCU variant |
+| **Upload method** | STM32CubeProgrammer (SWD) | Uses the onboard ST-LINK debugger |
+| **Port** | Not Required | Communicates via the ST-Link USB driver |
 
+### Step-by-Step Procedure
 
+1. **Connect to Debugger:** Connect the **USB-3** port to your host computer using a USB Type-C cable[cite: 2]. This dedicated port operates independently of the USB-to-UART bridge[cite: 2].
+2. **Set Boot Switch:** Ensure the Boot Slide Switch is set to NORMAL / OFF.
+3. **Upload Sketch:** Click **Upload** (`Ctrl + U`). Supported development environments will automatically detect the onboard ST-LINK[cite: 2], flash the target M.2 module, and trigger a software reset to execute your code.
 
+### Troubleshooting
+??? bug "Upload Failed or Board Not Responding"
+- **Failed to Init Serial Bootloader (CP2102):** Verify the Boot Slide Switch was set to `BOOT / ON` before you pressed RESET. Close the Arduino Serial Monitor prior to uploading, as an open serial connection locks the COM port.
+- **Program Doesn't Run After Upload:** Ensure you toggled the Boot Slide Switch back to NORMAL / OFF and pressed RESET after uploading over CP2102 or USB-OTG.
+- **DFU Device Not Detected:** Verify your USB cable supports data (not power-only) and is connected directly to the native USB-OTG port.
+- **STM32CubeProgrammer Not Found:** Ensure STM32CubeProgrammer is installed in its default system path. Restart Arduino IDE after installation so system environment variables refresh.
 
 
 
