@@ -101,7 +101,7 @@ Execute: Press the RESET button (or power cycle the board).
 !!! success "Expected Output"
 The green status LED on your STM32F405 MCU card will turn ON for 1 second and OFF for 1 second in a continuous loop.  
 
-Troubleshooting  
+## Troubleshooting  
 ??? bug "Upload Failed or LED Not Blinking"
 * Failed to Init Serial Bootloader: Verify the Boot Slide Switch was set to BOOT / ON before you pressed the RESET button or power-cycled the board.
 * Program Doesn't Run After Upload: Ensure you toggled the Boot Slide Switch back to NORMAL / OFF and pressed RESET after uploading.
