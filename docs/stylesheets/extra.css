@@ -87,12 +87,19 @@
   font-weight: 700;
 }
 
-/* Reduce Code Block & Inline Code Font Size */
-.md-typeset code,
-.md-typeset pre > code {
-  font-size: 0.20em; /* Default is ~0.88em; lower to 0.8em or 13px if you want it even smaller */
+/* Force Code Font Size Override */
+:root {
+  --md-code-font-size: 0.78rem; /* Controls the core Material theme variable */
 }
 
+/* Specificity Overrides */
+.md-typeset code,
+.md-typeset pre,
+.md-typeset pre > code,
+.md-typeset .highlight code,
+.md-typeset .highlight pre {
+  font-size: 13px !important; /* Direct pixel sizing override */
+}
 /* Adjust line height for tighter, cleaner code blocks */
 .md-typeset pre {
   line-height: 1.4;
