@@ -104,17 +104,3 @@
 .md-typeset pre {
   line-height: 1.4;
 }
-
-/* Clean, minimal hero styling */
-.md-typeset h1 {
-  font-size: 2.25rem !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.02em;
-  color: var(--md-default-fg-color) !important;
-}
-
-.md-typeset h3 {
-  font-weight: 400 !important;
-  color: var(--md-default-fg-color--light) !important;
-}
-
