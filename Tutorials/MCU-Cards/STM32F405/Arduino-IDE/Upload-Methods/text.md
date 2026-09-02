@@ -103,10 +103,10 @@ Flashing via the SWD (Serial Wire Debug) interface utilizes the Orbit-Q developm
 
 ### Troubleshooting
 !!! bug "Upload Failed or Board Not Responding"
-- **Failed to Init Serial Bootloader (CP2102):** Verify the Boot Slide Switch was set to `BOOT / ON` before you pressed RESET. Close the Arduino Serial Monitor prior to uploading, as an open serial connection locks the COM port.
-- **Program Doesn't Run After Upload:** Ensure you toggled the Boot Slide Switch back to NORMAL / OFF and pressed RESET after uploading over CP2102 or USB-OTG.
-- **DFU Device Not Detected:** Verify your USB cable supports data (not power-only) and is connected directly to the native USB-OTG port.
-- **STM32CubeProgrammer Not Found:** Ensure STM32CubeProgrammer is installed in its default system path. Restart Arduino IDE after installation so system environment variables refresh.
+    - **Failed to Init Serial Bootloader (CP2102):** Verify the Boot Slide Switch was set to `BOOT / ON` before you pressed RESET. Close the Arduino Serial Monitor prior to uploading, as an open serial connection locks the COM port.
+    - **Program Doesn't Run After Upload:** Ensure you toggled the Boot Slide Switch back to NORMAL / OFF and pressed RESET after uploading over CP2102 or USB-OTG.
+    - **DFU Device Not Detected:** Verify your USB cable supports data (not power-only) and is connected directly to the native USB-OTG port.
+    - **STM32CubeProgrammer Not Found:** Ensure STM32CubeProgrammer is installed in its default system path. Restart Arduino IDE after installation so system environment variables refresh.
 
 
 
