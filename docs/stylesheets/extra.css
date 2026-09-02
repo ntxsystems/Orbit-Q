@@ -115,3 +115,13 @@
   font-weight: 700 !important;
   color: var(--md-default-fg-color) !important;
 }
+
+/* Narrower sidebar, wider content area */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    width: 12rem;
+  }
+  .md-sidebar--secondary {
+    width: 12rem;
+  }
+}
