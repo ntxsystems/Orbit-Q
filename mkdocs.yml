@@ -8,8 +8,8 @@ repo_name: ntxsystems/Orbit-Q
 
 theme:
   name: material
-  logo: images/logo-ntx-systems.png
-  favicon: images/logo-ntx-systems.png
+  logo: images/Orbit-Q-logo.png
+  favicon: images/Orbit-Q-logo.png
   palette:
     - scheme: slate
       primary: custom
