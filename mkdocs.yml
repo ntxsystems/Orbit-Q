@@ -63,3 +63,4 @@ nav:
                   - Getting Started: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Getting Started/text.md"
                   - Blink Example: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Blink-Example/text.md"
                   - Upload Methods: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Upload-Methods/text.md"
+                  - WS2812B LED Example: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/WS2812B-RGB-LED-Example/text.md"
