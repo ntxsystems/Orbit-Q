@@ -6,8 +6,6 @@
 
 **Official documentation, datasheets, pinout guides, and code examples for the Orbit-Q development board by NTX SYSTEMS.**
 
-[Download Datasheet :material-file-pdf-box:](./Orbit-Q%20Datasheet.pdf){ .md-button .md-button--primary }
-[Board Photos :material-camera-outline:](images/readme.md){ .md-button }
 [View on GitHub :material-github:](https://github.com/ntxsystems/Orbit-Q){ .md-button }
 
 ---
