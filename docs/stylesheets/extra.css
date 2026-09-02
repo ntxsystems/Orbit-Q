@@ -90,7 +90,7 @@
 /* Reduce Code Block & Inline Code Font Size */
 .md-typeset code,
 .md-typeset pre > code {
-  font-size: 0.82em; /* Default is ~0.88em; lower to 0.8em or 13px if you want it even smaller */
+  font-size: 0.50em; /* Default is ~0.88em; lower to 0.8em or 13px if you want it even smaller */
 }
 
 /* Adjust line height for tighter, cleaner code blocks */
