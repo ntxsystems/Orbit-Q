@@ -68,6 +68,8 @@ This documentation outlines the hardware specifications, layout features, and pi
 - Operating Voltage: $3.3\,\text{V}$ nominal input, regulated via onboard safety components
 - Part Number: `D091125APTYF405A01`
 
+MCU E-CARD.png
+
 ### Power Management & Safety
 
 - Reverse Polarity Protection: The $3.3\,\text{V}$ power input line features an integrated hardware reverse polarity protection circuit to prevent damage from incorrect power supply connections.
