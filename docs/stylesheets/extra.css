@@ -116,11 +116,6 @@
   color: var(--md-default-fg-color) !important;
 }
 
-.md-typeset h2 {
-  font-weight: 600 !important;
-  color: var(--md-default-fg-color) !important;
-}
-
 .md-content__inner > div[align="center"] h3 {
   font-weight: 500 !important;
   color: var(--md-default-fg-color) !important;
