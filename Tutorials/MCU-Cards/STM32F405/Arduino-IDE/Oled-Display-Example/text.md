@@ -70,6 +70,9 @@ void loop() {
 }
 ```
 
+!!! tip "Run the Built-in Adafruit Example"
+    You can also test the screen's graphics capabilities by opening the built-in library example: navigate to **File > Examples > Adafruit SSD1306 > ssd1306_128x32_i2c**. Because the Orbit-Q uses the default I2C pins and display address (`0x3C`), this example sketch works perfectly out-of-the-box without any code modifications!
+
 ### Troubleshooting
 !!! failure "OLED Screen Remains Blank"
 - Check JP-2: Ensure the jumper caps are securely placed on both the SCL and SDA pins of the JP-2 header. Without these, PB6 and PB7 are not connected to the screen.
