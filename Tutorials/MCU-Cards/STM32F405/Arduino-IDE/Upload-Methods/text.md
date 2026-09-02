@@ -91,6 +91,15 @@ SWD programming works while the board remains in regular operational mode (`NORM
 | **SWDIO** |	PA13	| Serial Wire Data Input/Output |
 | **GND** |	GND	| Common Ground |
 
+### Arduino IDE Setup
+
+| Menu Item | Selected | SettingNotes |
+| :--- | :--- | :---|
+| **Board** | `Generic STM32F4 series` | Base core package |
+| **Board part number** | `STM32F405RGTx` | Target MCU variant |
+| **Upload method** | `STM32CubeProgrammer (SWD)` | Uses ST-Link programmer probe |
+| **Port** | **Not Required* | Communicates via ST-Link USB driver |
+
 
 
 
