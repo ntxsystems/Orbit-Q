@@ -1,104 +1,108 @@
 # Orbit-Q: Blink LED Example
 
-Learn how to compile and upload your first "Hello World" program—blinking an LED—on the Orbit-Q platform using the Arduino IDE.
+Learn how to configure your environment, set up the bootloader, and upload the classic Blink example to the **STM32F405** MCU card on Orbit-Q using the Arduino IDE.
 
 ---
 
-## Overview
+## Hardware Overview & Mapping
 
-The Blink example verifies that your toolchain, driver setup, and hardware programming interface (ST-Link or CP2102 UART bridge) are functioning correctly.
+The status LED is located directly on the STM32F405 MCU card and connected to pin `PC13`.
 
-!!! note "Hardware Compatibility"
-    This tutorial applies to both the **STM32F103** and **STM32F405** MCU cards mounted on the Orbit-Q Infrastructure Carrier.
-
----
-
-## Hardware Mapping
-
-| Component | Default Pin | Logic Active State | Description |
-| :--- | :--- | :--- | :--- |
-| **Status LED** | `PC13` | Active LOW (`LOW` = ON) | Onboard user LED on the target MCU Card |
-| **CP2102 UART** | `PA9` (TX) / `PA10` (RX) | 3.3V Logic | Serial debug output via primary USB-C port |
+| Component | Target Pin | Description |
+| :--- | :--- | :--- |
+| **Onboard User LED** | `PC13` | Green status LED on the STM32F405 MCU card |
+| **UART Bridge** | `PA9` (TX) / `PA10` (RX) | CP2102 USB-C interface for flashing and serial log output |
 
 ---
 
-## Code Example
+## 1. Arduino IDE Setup
 
-=== "Arduino IDE (C++)"
+Before writing or compiling your code, configure your toolchain options under **Tools** in the Arduino IDE:
 
-    ```cpp
-    /*
-     * Orbit-Q: Simple Blink Example
-     * Target: STM32 MCU Card (STM32F405 / STM32F103)
-     * Manufacturer: NTX Systems Pvt. Ltd.
-     */
-
-    #define USER_LED PC13  // Target GPIO for MCU Card Status LED
-
-    void setup() {
-      // Configure LED pin as digital output
-      pinMode(USER_LED, OUTPUT);
-      
-      // Initialize hardware UART for debug messages via CP2102
-      Serial.begin(115200);
-      Serial.println("Orbit-Q System Initialized.");
-    }
-
-    void loop() {
-      // Active LOW: Pulling GPIO LOW turns the LED ON
-      digitalWrite(USER_LED, LOW);
-      Serial.println("LED State: ON");
-      delay(500);
-
-      // Pulling GPIO HIGH turns the LED OFF
-      digitalWrite(USER_LED, HIGH);
-      Serial.println("LED State: OFF");
-      delay(500);
-    }
-    ```
-
-=== "MicroPython"
-
-    ```python
-    # Orbit-Q: MicroPython Blink Example
-    # Target: STM32 MCU Card
-
-    import machine
-    import time
-
-    # Initialize PC13 as Output
-    led = machine.Pin("PC13", machine.Pin.OUT)
-
-    print("Orbit-Q MicroPython Blink Loop Running...")
-
-    while True:
-        led.value(0)  # Turn LED ON (Active Low)
-        time.sleep(0.5)
-        led.value(1)  # Turn LED OFF
-        time.sleep(0.5)
-    ```
+| Menu Item | Selected Setting | Notes |
+| :--- | :--- | :--- |
+| **Board** | `Generic STM32F4 series` | Core STM32 architecture package |
+| **Board part number** | `STM32F405RGTx` | Target MCU variant (1024KB Flash, 192KB RAM) |
+| **Upload method** | `STM32CubeProgrammer (Serial)` | Flashes via ROM bootloader over the CP2102 UART bridge |
+| **Port** | Select CP2102 COM Port | e.g., `COMx` on Windows or `/dev/ttyUSBx` on Linux/Mac |
 
 ---
 
-## Step-by-Step Upload Guide
+## 2. Entering Bootloader Mode
 
-1. **Connect Hardware:** Plug a USB Type-C cable into the Orbit-Q base board and connect it to your PC.
-2. **Configure Board Settings in Arduino IDE:**
-   * Go to **Tools > Board > STM32 Board Series**.
-   * Select your target processor series (e.g., *Generic STM32F4 series* or *Generic STM32F1 series*).
-   * Under **Board part number**, select your card's specific variant (e.g., *STM32F405RGTx*).
-3. **Select Upload Method:**
-   * **ST-Link SWD (Recommended):** Set **Tools > Upload method** to `STM32CubeProgrammer (SWD)`.
-   * **CP2102 UART Bootloader:** Set **Tools > Upload method** to `STM32CubeProgrammer (Serial)` and select the COM port corresponding to the CP2102 bridge.
-4. **Compile and Upload:** Press **Ctrl + U** (or click the arrow icon in Arduino IDE).
+To allow the STM32F405 internal bootloader to accept code over UART via the CP2102 bridge, perform the following hardware sequence:
 
-!!! success "Expected Result"
-    Once flashing completes, the status LED on your MCU card will blink at 1 Hz (500 ms ON, 500 ms OFF). Open the **Serial Monitor** at `115200` baud to observe live debugging output.
+1. **Connect Cable:** Plug a USB Type-C cable into the **CP2102 USB-C port** on the Orbit-Q baseboard.
+2. **Set Boot Switch:** Move the **Boot Slide Switch** to the `BOOT / ON` position.
+3. **Trigger Reset:** Reset the target processor using either method:
+   * **Method A:** Press and release the **RESET (NRST)** button.
+   * **Method B:** Toggle the main **Power Switch** OFF and back ON (or power cycle the supply rail).
+4. **Select Port:** In Arduino IDE, go to **Tools > Port** and select the detected CP2102 serial port.
+
+!!! info "Flexibility"
+    While this tutorial uses the **CP2102 UART** bridge for single-cable flashing and serial monitoring, the board also supports **ST-Link V2 (SWD)** and **USB-OTG (DFU)** upload methods.
 
 ---
 
-## Troubleshooting
+## 3. Code Example
 
-??? bug "Troubleshooting Connection Issues"
-    * **Target Not Found (SWD):** Ensure the M.2 MCU card is fully seated and secured in the slot on the Orbit-Q base board.
-    * **No Serial Output:** Confirm that your Serial Monitor baud rate is set to `115200` and that the CP2102 USB-C cable is connected.
+Open a new sketch in Arduino IDE or go to **File > Examples > 01.Basics > Blink**, then update the code as shown below:
+
+```cpp
+/*
+  Blink
+
+  Turns an LED on for one second, then off for one second, repeatedly.
+
+  On the Orbit-Q STM32F405 MCU Card by NTX Systems, the on-board status LED
+  is connected to digital pin PC13. We define LED_BUILTIN as PC13 to target
+  this specific pin on the hardware platform.
+
+  modified 8 May 2014
+  by Scott Fitzgerald
+  modified 2 Sep 2016
+  by Arturo Guadalupi
+  modified 8 Sep 2016
+  by Colby Newman
+  modified for Orbit-Q STM32F405
+  by NTX Systems Pvt. Ltd.
+
+  This example code is in the public domain.
+
+  [https://ntxsystems.github.io/Orbit-Q/](https://ntxsystems.github.io/Orbit-Q/)
+*/
+
+// Define the onboard LED pin for Orbit-Q STM32F405
+#define LED_BUILTIN PC13
+
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin PC13 as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);                       // wait for a second
+}
+```
+---
+
+## 4. Flash and Run
+Upload Sketch: Click the Upload arrow button in Arduino IDE (or press Ctrl + U).
+
+Switch to Normal Execution: Once flashing completes, move the Boot Slide Switch back to the NORMAL / OFF position.  
+
+Execute: Press the RESET button (or power cycle the board).  
+
+!!! success "Expected Output"
+The green status LED on your STM32F405 MCU card will turn ON for 1 second and OFF for 1 second in a continuous loop.  
+
+Troubleshooting  
+??? bug "Upload Failed or LED Not Blinking"
+* Failed to Init Serial Bootloader: Verify the Boot Slide Switch was set to BOOT / ON before you pressed the RESET button or power-cycled the board.
+* Program Doesn't Run After Upload: Ensure you toggled the Boot Slide Switch back to NORMAL / OFF and pressed RESET after uploading.
+* Board Not Detected: Check that the M.2 MCU card is properly seated and locked into the carrier slot.
