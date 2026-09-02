@@ -1,5 +1,5 @@
-# Orbit-Q 
-# STM32F405 Development Platform - Pinout, Reference Guide and Specification
+# Orbit-Q: MCU Card
+# STM32F405 MCU Card Development Platform - Specification, Pinout and Reference Guide
 
 The STM32F405RGT6 is a mainstream high-performance microcontroller from STMicroelectronics built around the 32-bit ARM Cortex-M4 RISC core featuring a hardware Floating Point Unit (FPU) and full Digital Signal Processing (DSP) instruction sets. Operating at speeds up to 168 MHz and equipped with ST's Adaptive Real-Time (ART Accelerator), it executes instructions directly from Flash memory with zero wait states, delivering exceptional computational throughput for resource-constrained edge applications.
 
