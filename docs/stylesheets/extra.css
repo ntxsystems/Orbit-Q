@@ -125,3 +125,9 @@
     width: 12rem;
   }
 }
+
+@media screen and (min-width: 76.25em) {
+  .md-grid {
+    max-width: 90rem;
+  }
+}
