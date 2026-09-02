@@ -15,9 +15,9 @@ Before flashing firmware using any method, you must install **STM32CubeProgramme
 ```text
 [https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json](https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json)
 ```
-# Go to Tools > Board > Boards Manager, search for STM32 Cores, and click Install.
+## Go to Tools > Board > Boards Manager, search for STM32 Cores, and click Install.
 
-# Upload Methods Comparison
+## Upload Methods Comparison
 
 | Interface |	Target Port |	Boot Switch |	Upload Method in IDE |	Primary Use Case |
 | :--- | :--- | :--- | :--- | :--- |
@@ -40,15 +40,38 @@ Before flashing firmware using any method, you must install **STM32CubeProgramme
 
 ## Step-by-Step Procedure
 
-- Connect Cable: Plug a USB Type-C cable into the CP2102 USB-C port on the Orbit-Q baseboard.
-- Set Boot Switch: Move the Boot Slide Switch to the BOOT / ON position.
-- Trigger Reset: Reset the target processor using either method:
-  - Method A: Press and release the RESET (NRST) button.
-  - Method B: Toggle the main Power Switch OFF and back ON.
-- Select Port: In Arduino IDE, go to Tools > Port and select the detected CP2102 serial port.
-- Upload Sketch: Click the Upload arrow button in Arduino IDE (or press Ctrl + U).
-- Switch to Normal Execution: Once flashing completes, move the Boot Slide Switch back to NORMAL / OFF.
-- Execute: Press the RESET button (or power cycle the board).
+- **Connect Cable:** Plug a USB Type-C cable into the **CP2102 USB-C** port on the Orbit-Q baseboard.
+- **Set Boot Switch:** Move the Boot Slide Switch to the `BOOT / ON` position.
+- **Trigger Reset:** Reset the target processor using either method:
+  - **Method A:** Press and release the **RESET (NRST)** button.
+  - **Method B:** Toggle the main **Power Switch OFF and back ON.**
+- **Select Port:** In Arduino IDE, go to Tools > Port and select the detected CP2102 serial port.
+- **Upload Sketch:** Click the Upload arrow button in Arduino IDE (or press `Ctrl + U`).
+- **Switch to Normal Execution:** Once flashing completes, move the Boot Slide Switch back to `NORMAL / OFF.`
+- **Execute:** Press the **RESET** button (or power cycle the board).
+
+## 2. USB-OTG DFU Method (Direct Native USB)
+
+**The STM32F405 contains a full-speed USB-OTG peripheral (PA11/PA12). In bootloader mode, it acts as a USB DFU (Device Firmware Upgrade) target, bypassing external serial chips.**
+
+## Arduino IDE Setup
+
+| Menu Item | Selected Setting | Notes |
+| :--- | :--- | :---|
+| Board |	Generic STM32F4 series |	Base core package |
+| Board part number |	STM32F405RGTx |	Target MCU variant |
+| Upload method |	`STM32CubeProgrammer (DFU)` |	Direct USB bootloader flashing |
+| Port |	Not Required |	DFU protocol communicates directly without COM port assignment |
+
+## Step-by-Step Procedure
+
+- **Connect Cable:** Plug a USB Type-C cable directly into the **USB-OTG port on the STM32F405 MCU card.**
+- **Set Boot Switch:** Move the Boot Slide Switch to the `BOOT / ON` position.
+- **Trigger Reset:** Press and release the RESET (NRST) button.
+- **Upload Sketch:** Click Upload `(Ctrl + U)` in **Arduino IDE.**
+- **Switch to Normal Execution:** Once complete, return the Boot Slide Switch to `NORMAL / OFF`.
+- **Execute:** Press the **RESET** button.
+
 
 
 
