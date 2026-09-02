@@ -101,17 +101,9 @@ Flashing via the SWD (Serial Wire Debug) interface utilizes the Orbit-Q developm
 2. **Set Boot Switch:** Ensure the Boot Slide Switch is set to `NORMAL / OFF.`
 3. **Upload Sketch:** Click **Upload** (`Ctrl + U`). Supported development environments will automatically detect the onboard ST-LINK, flash the target M.2 module, and trigger a software reset to execute your code.
 
-### Troubleshooting
-!!! bug "Upload Failed or Board Not Responding"
+!!! Troubleshooting "Upload Failed or Board Not Responding"
     - **Failed to Init Serial Bootloader (CP2102):** Verify the Boot Slide Switch was set to `BOOT / ON` before you pressed RESET. Close the Arduino Serial Monitor prior to uploading, as an open serial connection locks the COM port.
     - **Program Doesn't Run After Upload:** Ensure you toggled the Boot Slide Switch back to NORMAL / OFF and pressed RESET after uploading over CP2102 or USB-OTG.
     - **DFU Device Not Detected:** Verify your USB cable supports data (not power-only) and is connected directly to the native USB-OTG port.
     - **STM32CubeProgrammer Not Found:** Ensure STM32CubeProgrammer is installed in its default system path. Restart Arduino IDE after installation so system environment variables refresh.
-
-
-
-| Component | Target Pin | Description |
-| :--- | :--- | :--- |
-| **Onboard User LED** | `PC13` | Green status LED on the STM32F405 MCU card |
-| **UART Bridge** | `PA9` (TX) / `PA10` (RX) | CP2102 USB-C interface for flashing and serial log output |
 
