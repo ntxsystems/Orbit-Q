@@ -1,4 +1,5 @@
-# Orbit-Q STM32F405 Development Platform - Pinout & Reference Guide
+# Orbit-Q 
+# STM32F405 Development Platform - Pinout, Reference Guide and Specification
 
 This document provides the complete hardware pinout, peripheral mappings, and configuration guidelines for the **Orbit-Q** development board featuring the **STM32F405RGT6** M.2 module.
 
