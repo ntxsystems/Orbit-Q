@@ -47,7 +47,6 @@ To allow the STM32F405 internal bootloader to accept code over UART via the CP21
 ## 3. Code Example
 
 Open a new sketch in Arduino IDE or go to **File > Examples > 01.Basics > Blink**, then update the code as shown below:
-
 ```cpp
 /*
   Blink
