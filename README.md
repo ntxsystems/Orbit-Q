@@ -6,6 +6,8 @@
 
 **Official documentation, datasheets, pinout guides, and code examples for the Orbit-Q development board by NTX SYSTEMS.**
 
+</div>
+
 [View on GitHub :material-github:](https://github.com/ntxsystems/Orbit-Q){ .md-button }
 
 ---
@@ -13,7 +15,6 @@
 ![Orbit-Q Board](images/image_9cbed628.png)
 
 ## Why ORBIT-Q Exists
-
 Most major hardware ecosystems have a reference dev board behind them: Raspberry Pi for the UK, the ESP series out of China, ST Nucleo and Arduino out of Europe, Teensy/Adafruit/SparkFun out of the US. India didn't have an equivalent of its own — that was the starting gap.
 
 But a dev board on its own isn't a reason to build anything; the interesting part was working out why that gap existed, not just that it did. Looking at what people in India actually reach for:
