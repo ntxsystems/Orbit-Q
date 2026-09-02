@@ -100,6 +100,7 @@
 .md-typeset .highlight pre {
   font-size: 13px !important; /* Direct pixel sizing override */
 }
+
 /* Adjust line height for tighter, cleaner code blocks */
 .md-typeset pre {
   line-height: 1.4;
@@ -112,6 +113,11 @@
 
 .md-typeset h1:first-of-type {
   font-weight: 700 !important;
+  color: var(--md-default-fg-color) !important;
+}
+
+.md-typeset h2 {
+  font-weight: 600 !important;
   color: var(--md-default-fg-color) !important;
 }
 
