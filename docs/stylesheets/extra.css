@@ -109,3 +109,14 @@
   font-weight: 400 !important;
   color: #9a9a9a !important;
 }
+
+.md-typeset h1:first-of-type {
+  font-weight: 700 !important;
+  color: var(--md-default-fg-color) !important;
+}
+
+.md-content__inner > div[align="center"] h3 {
+  font-weight: 500 !important;
+  color: var(--md-default-fg-color) !important;
+  opacity: 0.75;
+}
