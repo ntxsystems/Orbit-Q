@@ -106,23 +106,15 @@
 }
 
 /* Clean, minimal hero styling */
-.md-typeset h1:first-of-type {
-  font-size: 2.25rem;
-  font-weight: 700;
+.md-typeset h1 {
+  font-size: 2.25rem !important;
+  font-weight: 700 !important;
   letter-spacing: -0.02em;
-  margin-bottom: 0.3rem;
+  color: var(--md-default-fg-color) !important;
 }
 
-.md-content__inner > div[align="center"] h3 {
-  font-weight: 400;
-  color: var(--md-default-fg-color--light);
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-}
-
-.md-content__inner > div[align="center"] {
-  padding: 2.5rem 1rem 2rem;
-  border-bottom: 1px solid var(--md-default-fg-color--lightest);
-  margin-bottom: 2rem;
+.md-typeset h3 {
+  font-weight: 400 !important;
+  color: var(--md-default-fg-color--light) !important;
 }
 
