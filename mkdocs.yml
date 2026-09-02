@@ -65,3 +65,5 @@ nav:
                   - Upload Methods: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Upload-Methods/text.md"
                   - WS2812B LED Example: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/WS2812B-RGB-LED-Example/text.md"
                   - Oled Display Example: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Oled-Display-Example/text.md"
+                  - SD-Card Example: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/SD-Card-Example/text.md"
+
