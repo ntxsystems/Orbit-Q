@@ -48,6 +48,10 @@ The STM32F405RGT6 is a mainstream high-performance microcontroller from STMicroe
 
 ---
 
+<div align="center" markdown>
+mcu-stm32f405-card.png
+</div>
+
 ## STM32F405RGT6 M.2 E-Card Hardware Specification
 
 ### Overview
