@@ -4,6 +4,50 @@ This document provides the complete hardware pinout, peripheral mappings, and co
 
 ---
 
+## STM32F405RGT6 M.2 E-Card Hardware Specification
+
+### Overview
+
+This documentation outlines the hardware specifications, layout features, and pin configuration for the NTX Systems custom STM32F405RGT6 M.2 E-Card (Part Number: `D091125APTYF405A01`). Built on an M.2 E-Key (NGFF) form factor, this compact module packs a high-performance ARM Cortex-M4 microcontroller into a standardized edge-connector design.
+
+### Core Specifications
+
+- Microcontroller: STMicroelectronics STM32F405RGT6 (ARM Cortex-M4 32-bit RISC core with FPU)
+- Operating Frequency: Up to $168\,\text{MHz}$
+- Flash Memory: $1\,\text{MB}$
+- SRAM: $192\,\text{KB}$ (+ $4\,\text{KB}$ backup SRAM)
+- Clock Source: $8\,\text{MHz}$ High-Speed External (HSE) crystal oscillator (Note: No OSC32 low-speed crystal installed)
+- Operating Voltage: $3.3\,\text{V}$ nominal input, regulated via onboard safety components
+- Part Number: `D091125APTYF405A01`
+
+### Power Management & Safety
+
+- Reverse Polarity Protection: The $3.3\,\text{V}$ power input line features an integrated hardware reverse polarity protection circuit to prevent damage from incorrect power supply connections.
+- Power LED: An onboard power indicator LED wired directly to the $3.3\,\text{V}$ rail indicates active power status
+
+### Onboard Controls & User Interface
+
+- Reset Button (NRST): Tactile push-button switch connected to the microcontroller's hardware reset line.
+- Boot Mode Selector: Onboard slide switch for configuring the `BOOT0` pin state easily between operational modes (Boot OFF / Boot ON).
+- Status LED (PC13): Dedicated user/status LED connected to pin `PC13` in an active-high configuration (LED lights up when `PC13` goes HIGH).
+
+### Solder Pads & Extra Access Points
+
+Because `PC13` is utilized by the onboard status LED, it is omitted from the standard edge connector interface. However, dedicated test/solder pads are provided on the PCB for advanced access:
+
+* `3V3` — Power rail access
+
+* `GND` — Ground reference
+
+* `SWDIO` — Serial Wire Debug Data
+
+* `SWCLK` — Serial Wire Debug Clock
+
+* `BOOT1` — `BOOT1` configuration point
+
+* `PC13` — Direct access pad for pin `PC13` (bypassing the basic interface)
+
+
 ## 1. Complete M.2 Pinout Mapping (Pins 1–68)
 
 | Pin (Left) | Signal / Function | Pin (Right) | Signal / Function |
@@ -61,7 +105,63 @@ This document provides the complete hardware pinout, peripheral mappings, and co
 
 ---
 
-## 3. Arduino IDE Setup & Configuration
+### 3. STM32F405RGT6 MCU Pin Details
+
+| Pin No. | Pin name after reset | Pin type | I/O structure | Alternate functions | Additional functions |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Solder Pad | `PC13` | I/O | FT | EVENTOUT | RTC_AF1 |
+| 49 | `PC14-OSC32_IN (PC14)` | I/O | FT | EVENTOUT | OSC32_IN(4) |
+| 50 | `PC15- OSC32_OUT (PC15)` | I/O | FT | EVENTOUT | OSC32_OUT |
+| 34 | `PC0` | I/O | FT | OTG_HS_ULPI_STP/ EVENTOUT | ADC123_IN10 |
+| 33 | `PC1` | I/O | FT | ETH_MDC/ EVENTOUT | ADC123_IN11 |
+| 32 | `PC2` | I/O | FT | SPI2_MISO /OTG_HS_ULPI_DIR /TH_MII_TXD2/I2S2ext_SD/ EVENTOUT | ADC123_IN12 |
+| 31 | `PC3` | I/O | FT | SPI2_MOSI / I2S2_SD / OTG_HS_ULPI_NXT / ETH_MII_TX_CLK/ EVENTOUT | ADC123_IN13 |
+| 30 | `PA0-WKUP (PA0)` | I/O | FT | USART2_CTS/ UART4_TX/ ETH_MII_CRS / TIM2_CH1_ETR/ TIM5_CH1 / TIM8_ETR/ EVENTOUT | ADC123_IN0/WKUP(4) |
+| 29 | `PA1` | I/O | FT | USART2_RTS / UART4_RX/ ETH_RMII_REF_CLK / ETH_MII_RX_CLK / TIM5_CH2 / TIMM2_CH2/ EVENTOUT | ADC123_IN1 |
+| 28 | `PA2` | I/O | FT | USART2_TX/TIM5_CH3 / TIM9_CH1 / TIM2_CH3 / ETH_MDIO/ EVENTOUT | ADC123_IN2 |
+| 26 | `PA3` | I/O | FT | USART2_RX/TIM5_CH4 / TIM9_CH2 / TIM2_CH4 / OTG_HS_ULPI_D0 / ETH_MII_COL/ EVENTOUT | ADC123_IN3 |
+| 25 | `PA4` | I/O | TC | SPI1_NSS / SPI3_NSS / USART2_CK / DCMI_HSYNC / OTG_HS_SOF/ I2S3_WS/ EVENTOUT | ADC12_IN4 /DAC1_OUT |
+| 24 | `PA5` | I/O | TC | SPI1_SCK/ OTG_HS_ULPI_CK / TIM2_CH1_ETR/ TIM8_CHIN/ EVENTOUT | ADC12_IN5/ DAC2_OUT |
+| 23 | `PA6` | I/O | FT | SPI1_MISO / TIM8_BKIN/TIM13_CH1 / DCMI_PIXCLK / TIM3_CH1 / TIM1_BKIN/ EVENTOUT | ADC12_IN6 |
+| 22 | `PA7` | I/O | FT | SPI1_MOSI/ TIM8_CH1N / TIM14_CH1/TIM3_CH2/ ETH_MII_RX_DV / TIM1_CH1N / RMII_CRS_DV/ EVENTOUT | ADC12_IN7 |
+| 21 | `PC4` | I/O | FT | ETH_RMII_RX_D0 / ETH_MII_RX_D0/ EVENTOUT | ADC12_IN14 |
+| 20 | `PC5` | I/O | FT | ETH_RMII_RX_D1 / ETH_MII_RX_D1/ EVENTOUT | ADC12_IN15 |
+| 19 | `PB0` | I/O | FT | TIM3_CH3 / TIM8_CH2N/ OTG_HS_ULPI_D1/ ETH_MII_RXD2 / TIM1_CH2N/ EVENTOUT | ADC12_IN8 |
+| 18 | `PB1` | I/O | FT | TIM3_CH4 / TIM8_CH3N/ OTG_HS_ULPI_D2/ ETH_MII_RXD3 / TIM1_CH3N/ EVENTOUT | ADC12_IN9 |
+| Solder Pad | `PB2-BOOT1 (PB2)` | I/O | FT | EVENTOUT | - |
+| 17 | `PB10` | I/O | FT | SPI2_SCK / I2S2_CK / I2C2_SCL/ USART3_TX / OTG_HS_ULPI_D3 / ETH_MII_RX_ER / TIM2_CH3/ EVENTOUT | - |
+| 16 | `PB11` | I/O | FT | I2C2_SDA/USART3_RX/ OTG_HS_ULPI_D4 / ETH_RMII_TX_EN/ ETH_MII_TX_EN / TIM2_CH4/ EVENTOUT | - |
+| 14 | `PB12` | I/O | FT | SPI2_NSS / I2S2_WS / I2C2_SMBA/ USART3_CK/ TIM1_BKIN / CAN2_RX / OTG_HS_ULPI_D5/ ETH_RMII_TXD0 / ETH_MII_TXD0/ OTG_HS_ID/ EVENTOUT | - |
+| 13 | `PB13` | I/O | FT | SPI2_SCK / I2S2_CK / USART3_CTS/ TIM1_CH1N /CAN2_TX / OTG_HS_ULPI_D6 / ETH_RMII_TXD1 / ETH_MII_TXD1/ EVENTOUT | OTG_HS_VBUS |
+| 12 | `PB14` | I/O | FT | SPI2_MISO/ TIM1_CH2N / TIM12_CH1 / OTG_HS_DM/ USART3_RTS / TIM8_CH2N/I2S2ext_SD/ EVENTOUT | - |
+| 11 | `PB15` | I/O | FT | SPI2_MOSI / I2S2_SD/ TIM1_CH3N / TIM8_CH3N / TIM12_CH2 / OTG_HS_DP/ EVENTOUT | - |
+| 44 | `PC6` | I/O | FT | I2S2_MCK / TIM8_CH1/SDIO_D6 / USART6_TX / DCMI_D0/TIM3_CH1/ EVENTOUT | - |
+| 45 | `PC7` | I/O | FT | I2S3_MCK / TIM8_CH2/SDIO_D7 / USART6_RX / DCMI_D1/TIM3_CH2/ EVENTOUT | - |
+| 46 | `PC8` | I/O | FT | TIM8_CH3/SDIO_D0 /TIM3_CH3/ USART6_CK / DCMI_D2/ EVENTOUT | - |
+| 47 | `PC9` | I/O | FT | I2S_CKIN/ MCO2 / TIM8_CH4/SDIO_D1 / /I2C3_SDA / DCMI_D3 / TIM3_CH4/ EVENTOUT | - |
+| 68 | `PA8` | I/O | FT | MCO1 / USART1_CK/ TIM1_CH1/ I2C3_SCL/ OTG_FS_SOF/ EVENTOUT | - |
+| 66 | `PA9` | I/O | FT | USART1_TX/ TIM1_CH2 / I2C3_SMBA / DCMI_D0/ EVENTOUT | OTG_FS_VBUS |
+| 65 | `PA10` | I/O | FT | USART1_RX/ TIM1_CH3/ OTG_FS_ID/DCMI_D1/ EVENTOUT | - |
+| 9 | `PA11` | I/O | FT | USART1_CTS / CAN1_RX / TIM1_CH4 / OTG_FS_DM/ EVENTOUT | - |
+| 8 | `PA12` | I/O | FT | USART1_RTS / CAN1_TX/ TIM1_ETR/ OTG_FS_DP/ EVENTOUT | - |
+| 6 | `PA13 (JTMS-SWDIO)` | I/O | FT | JTMS-SWDIO/ EVENTOUT | - |
+| 5 | `PA14 (JTCK-SWCLK)` | I/O | FT | JTCK-SWCLK/ EVENTOUT | - |
+| 64 | `PA15 (JTDI)` | I/O | FT | JTDI/ SPI3_NSS/ I2S3_WS/TIM2_CH1_ETR / SPI1_NSS / EVENTOUT | - |
+| 63 | `PC10` | I/O | FT | SPI3_SCK / I2S3_CK/ UART4_TX/SDIO_D2 / DCMI_D8 / USART3_TX/ EVENTOUT | - |
+| 62 | `PC11` | I/O | FT | UART4_RX/ SPI3_MISO / SDIO_D3 / DCMI_D4/USART3_RX / I2S3ext_SD/ EVENTOUT | - |
+| 61 | `PC12` | I/O | FT | UART5_TX/SDIO_CK / DCMI_D9 / SPI3_MOSI /I2S3_SD / USART3_CK/ EVENTOUT | - |
+| 60 | `PD2` | I/O | FT | TIM3_ETR/UART5_RX/ SDIO_CMD / DCMI_D11/ EVENTOUT | - |
+| 59 | `PB3 (JTDO/ TRACESWO)` | I/O | FT | JTDO/ TRACESWO/ SPI3_SCK / I2S3_CK / TIM2_CH2 / SPI1_SCK/ EVENTOUT | - |
+| 58 | `PB4 (NJTRST)` | I/O | FT | NJTRST/ SPI3_MISO / TIM3_CH1 / SPI1_MISO / I2S3ext_SD/ EVENTOUT | - |
+| 57 | `PB5` | I/O | FT | I2C1_SMBA/ CAN2_RX / OTG_HS_ULPI_D7 / ETH_PPS_OUT/TIM3_CH 2 / SPI1_MOSI/ SPI3_MOSI / DCMI_D10 / I2S3_SD/ EVENTOUT | - |
+| 56 | `PB6` | I/O | FT | I2C1_SCL/ TIM4_CH1 / CAN2_TX / DCMI_D5/USART1_TX/ EVENTOUT | - |
+| 54 | `PB7` | I/O | FT | I2C1_SDA / FSMC_NL / DCMI_VSYNC / USART1_RX/ TIM4_CH2/ EVENTOUT | - |
+| 53 | `BOOT0` | I | B | - | VPP |
+| 52 | `PB8` | I/O | FT | TIM4_CH3/SDIO_D4/ TIM10_CH1 / DCMI_D6 / ETH_MII_TXD3 / I2C1_SCL/ CAN1_RX/ EVENTOUT | - |
+| 51 | `PB9` | I/O | FT | SPI2_NSS/ I2S2_WS / TIM4_CH4/ TIM11_CH1/ SDIO_D5 / DCMI_D7 / I2C1_SDA / CAN1_TX/ EVENTOUT | - |
+
+
+## 4. Arduino IDE Setup & Configuration
 
 1. **Add Board Manager URL:**
    Open Arduino IDE, go to **File > Preferences**, and paste the following URL into *Additional board manager URLs*:
