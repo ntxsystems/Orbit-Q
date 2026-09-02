@@ -69,7 +69,7 @@ Open a new sketch in Arduino IDE or go to **File > Examples > 01.Basics > Blink*
 
   This example code is in the public domain.
 
-  [https://ntxsystems.github.io/Orbit-Q/](https://ntxsystems.github.io/Orbit-Q/)
+  https://ntxsystems.github.io/Orbit-Q/
 */
 
 // Define the onboard LED pin for Orbit-Q STM32F405
