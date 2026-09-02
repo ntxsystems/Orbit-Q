@@ -33,10 +33,10 @@ Before flashing firmware using any method, you must install **STM32CubeProgramme
 
 | Menu Item |	Selected Setting |	Notes |
 | :--- | :--- | :---|
-| Board |	`Generic STM32F4 series` |	Base core package |
-| Board part number |	`STM32F405RGTx` |	Target MCU variant (1024KB Flash, 192KB RAM) |
-| Upload method |	`STM32CubeProgrammer (Serial)` |	Flashes via ROM bootloader over UART bridge |
-| Port |	`Select CP2102 COM Port` |	e.g., COMx on Windows or /dev/ttyUSBx on Linux/Mac |
+| **Board** |	`Generic STM32F4 series` |	Base core package |
+| **Board part number** |	`STM32F405RGTx` |	Target MCU variant (1024KB Flash, 192KB RAM) |
+| **Upload method** |	`STM32CubeProgrammer (Serial)` |	Flashes via ROM bootloader over UART bridge |
+| **Port** |	`Select CP2102 COM Port` |	e.g., COMx on Windows or /dev/ttyUSBx on Linux/Mac |
 
 ## Step-by-Step Procedure
 
@@ -58,10 +58,10 @@ Before flashing firmware using any method, you must install **STM32CubeProgramme
 
 | Menu Item | Selected Setting | Notes |
 | :--- | :--- | :---|
-| Board |	Generic STM32F4 series |	Base core package |
-| Board part number |	STM32F405RGTx |	Target MCU variant |
-| Upload method |	`STM32CubeProgrammer (DFU)` |	Direct USB bootloader flashing |
-| Port |	Not Required |	DFU protocol communicates directly without COM port assignment |
+| **Board** |	Generic STM32F4 series |	Base core package |
+| **Board part number** |	STM32F405RGTx |	Target MCU variant |
+| **Upload method** |	`STM32CubeProgrammer (DFU)` |	Direct USB bootloader flashing |
+| **Port** |	Not Required |	DFU protocol communicates directly without COM port assignment |
 
 ## Step-by-Step Procedure
 
@@ -71,6 +71,27 @@ Before flashing firmware using any method, you must install **STM32CubeProgramme
 - **Upload Sketch:** Click Upload `(Ctrl + U)` in **Arduino IDE.**
 - **Switch to Normal Execution:** Once complete, return the Boot Slide Switch to `NORMAL / OFF`.
 - **Execute:** Press the **RESET** button.
+
+!!! warning "Windows USB DFU Driver (Zadig)"
+If Arduino IDE reports `No DFU device found` on Windows, download **Zadig**, select Options > List All Devices, locate **STM32 BOOTLOADER**, and replace the driver with WinUSB (v6.1.7600.16385).
+
+## 3. ST-Link V2 / SWD Method (Hardware Debugger)
+
+Flashing via the **SWD (Serial Wire Debug)** interface connects an external ST-Link programmer to the onboard header.
+
+!!! tip "No Boot Switch Toggling Required"
+SWD programming works while the board remains in regular operational mode (`NORMAL / OFF`). You do not need to toggle the Boot Slide Switch or force bootloader mode.
+
+### Pinout Connection
+
+| ST-Link V2 Pin | Orbit-Q Header Pin | Description |
+| :--- | :--- | :---|
+| **3V3** |	3V3	| Target Power Reference |
+| **SWCLK** |	PA14	| Serial Wire Clock |
+| **SWDIO** |	PA13	| Serial Wire Data Input/Output |
+| **GND** |	GND	| Common Ground |
+
+
 
 
 
