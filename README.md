@@ -1,22 +1,14 @@
-<div align="center" markdown>
+# Orbit-Q: Modular Development Board
 
-# ORBIT-Q
-
-### The Modular Embedded Development Workstation
-
-**Official documentation, datasheets, pinout guides, and code examples for the Orbit-Q development board by NTX Systems.**
-
-<video autoplay muted loop playsinline width="80%">
-  <source src="/Orbit-Q/images/videos/orbit-q-video-001.mp4" type="video/mp4">
-</video>
+**Official documentation, datasheets, pinout guides, and code examples for the Orbit-Q development board by NTX SYSTEMS.**
 
 [Download Datasheet :material-file-pdf-box:](./Orbit-Q%20Datasheet.pdf){ .md-button .md-button--primary }
 [Board Photos :material-camera-outline:](images/readme.md){ .md-button }
 [View on GitHub :material-github:](https://github.com/ntxsystems/Orbit-Q){ .md-button }
 
-</div>
-
 ---
+
+![Orbit-Q Board](images/image_9cbed628.png)
 
 ## Why ORBIT-Q Exists
 
