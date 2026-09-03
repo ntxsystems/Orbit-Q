@@ -138,3 +138,56 @@ def greet(name):
 **Warning Level:** <span style="color: #f59e0b;">*MEDIUM*</span>  
 **Critical Errors:** <span style="color: #ef4444;">**NONE**</span>
 
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
+  <br>
+  <b>This heading or text is centered on the website.</b>
+</p>
+
+<p align="right">
+  <b>This text is aligned to the right.</b>
+</p>
+
+<div style="max-width: 600px; margin: 0 auto; padding: 15px; border: 2px solid #3b82f6; border-radius: 8px; background-color: rgba(59, 130, 246, 0.05); text-align: center;">
+  <h4 style="margin-top: 0; color: #3b82f6;">Centered Information Box</h4>
+  <p style="margin-bottom: 0;">This box stays centered on your site with a custom border and soft tint.</p>
+</div>
+
+<div style="float: right; width: 280px; margin-left: 20px; padding: 12px; border: 1px solid #10b981; border-radius: 6px; background-color: rgba(16, 185, 129, 0.05);">
+  <b style="color: #10b981;">Quick Specs</b>
+  <ul style="margin: 5px 0 0 15px; padding: 0;">
+    <li>Microcontroller: STM32</li>
+    <li>Voltage: 3.3V</li>
+  </ul>
+</div>
+
+This main document text will naturally flow and wrap around the right-floated box on your website.
+<div style="clear: both;"></div>
+
+<div style="float: left; width: 280px; margin-right: 20px; padding: 12px; border: 1px solid #f59e0b; border-radius: 6px; background-color: rgba(245, 158, 11, 0.05);">
+  <b style="color: #f59e0b;">Warning</b>
+  <p style="margin: 5px 0 0 0;">Check pinouts before connecting power.</p>
+</div>
+
+This main document text will naturally flow and wrap around the left-floated box on your website.
+<div style="clear: both;"></div>
+
+
+<div style="display: flex; gap: 15px; margin: 20px 0;">
+  
+  <div style="flex: 1; padding: 15px; border: 1px solid #0284c7; border-radius: 8px;">
+    <h4 style="margin-top: 0; color: #0284c7;">Left Column</h4>
+    <p style="margin-bottom: 0;">Hardware details, setup instructions, or primary configuration.</p>
+  </div>
+
+  <div style="flex: 1; padding: 15px; border: 1px solid #8b5cf6; border-radius: 8px;">
+    <h4 style="margin-top: 0; color: #8b5cf6;">Right Column</h4>
+    <p style="margin-bottom: 0;">Firmware notes, pin connections, or secondary information.</p>
+  </div>
+
+</div>
+
+
+
+
