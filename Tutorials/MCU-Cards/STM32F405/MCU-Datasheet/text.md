@@ -69,7 +69,7 @@ This documentation outlines the hardware specifications, layout features, and pi
 - Part Number: `D091125APTYF405A01`
 
 <p align="center">
-  <img src=".images/MCU%20E-CARD.png" alt="Step 1" width="400">
+  <img src="./images/MCU%20E-CARD.png" alt="Step 1" width="400">
 </p>
 
 ### Power Management & Safety
