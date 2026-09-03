@@ -34,6 +34,16 @@ $\textcolor{red}{\text{This text is red}}$
 $\textcolor{#3b82f6}{\text{This text uses a custom hex color}}$
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)
+![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
+![STM32](https://img.shields.io/badge/STM32-03234C?style=for-the-badge&logo=stmicroelectronics&logoColor=00ECFF)
+![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-C51A4A?style=for-the-badge&logo=Raspberry-Pi&logoColor=white)
+![ESP32](https://img.shields.io/badge/ESP32-E7352C?style=for-the-badge&logo=espressif&logoColor=white)
+![ArduPilot](https://img.shields.io/badge/ArduPilot-000000?style=for-the-badge&logo=ardupilot&logoColor=red)
+![ROS2](https://img.shields.io/badge/ROS2-22314E?style=for-the-badge&logo=ros&logoColor=white)
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![PlatformIO](https://img.shields.io/badge/PlatformIO-F68220?style=for-the-badge&logo=platformio&logoColor=white)
+![FreeRTOS](https://img.shields.io/badge/FreeRTOS-10b981?style=for-the-badge&logoColor=white)
+
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
 
