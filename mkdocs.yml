@@ -58,6 +58,7 @@ nav:
           - STM32F103:
               - Arduino IDE:
                   - Getting Started: "Tutorials/MCU-Cards/STM32F103/Arduino-IDE/Getting Started/text.md"
+                  - Blink Example: "Tutorials/MCU-Cards/STM32F103/Arduino-IDE/Blink-Example/text.md"
           - STM32F405:
               - MCU Datasheet: "Tutorials/MCU-Cards/STM32F405/MCU-Datasheet/text.md"
               - Arduino IDE:
