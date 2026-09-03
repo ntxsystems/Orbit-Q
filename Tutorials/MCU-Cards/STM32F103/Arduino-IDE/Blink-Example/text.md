@@ -52,3 +52,25 @@ def greet(name):
     print(f"Hello, {name}!")
 ```
 
+<span style="color: red;">This text is red</span>
+<span style="color: #3b82f6;">This text uses a custom hex color</span>
+
+
+!!! note
+    Useful information that users should know.
+
+!!! tip
+    Helpful advice for doing things better or faster.
+
+!!! success "Important"
+    Crucial information needed for a user to succeed. (You can customize titles in quotes).
+
+!!! warning
+    Critical content demanding immediate user attention.
+
+!!! danger "Caution"
+    Negative potential consequences of an action.
+
+    
+
+
