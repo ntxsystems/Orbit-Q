@@ -72,5 +72,37 @@ def greet(name):
     Negative potential consequences of an action.
 
     
+<!-- Bold -->
+**<span style="color: orange;">Bold Orange Text</span>**
 
+<!-- Italic -->
+*<span style="color: green;">Italic Green Text</span>*
+
+<!-- Bold & Italic -->
+***<span style="color: #10b981;">Bold and Italic Emerald Text</span>***
+
+<!-- Headings -->
+# <span style="color: orange;">Orange Level 1 Heading</span>
+## <span style="color: #f59e0b;">Amber Level 2 Heading</span>
+### <span style="color: green;">Green Level 3 Heading</span>
+
+
+<!-- Bold -->
+<span style="color: orange; font-weight: bold;">Bold Orange Text</span>
+
+<!-- Italic -->
+<span style="color: green; font-style: italic;">Italic Green Text</span>
+
+<!-- Bold & Italic -->
+<span style="color: orange; font-weight: bold; font-style: italic;">Bold & Italic Text</span>
+
+<!-- Headings using pure HTML -->
+<h2 style="color: orange;">Orange Level 2 Heading</h2>
+
+
+### <span style="color: #10b981;">✔ System Online</span>
+
+**Status:** <span style="color: green; font-weight: bold;">READY</span>  
+**Warning Level:** <span style="color: #f59e0b;">*MEDIUM*</span>  
+**Critical Errors:** <span style="color: #ef4444;">**NONE**</span>
 
