@@ -68,13 +68,9 @@ This documentation outlines the hardware specifications, layout features, and pi
 - Operating Voltage: $3.3\,\text{V}$ nominal input, regulated via onboard safety components
 - Part Number: `D091125APTYF405A01`
 
-
-<div style="max-width: 200px; margin: 0 auto;">
- 
+<div align="center" markdown>
 ![Step 1](images/MCU%20E-CARD.png)
-
 </div>
-
 
 ### Power Management & Safety
 
