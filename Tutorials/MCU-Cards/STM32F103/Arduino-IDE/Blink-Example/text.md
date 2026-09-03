@@ -45,6 +45,28 @@ $\textcolor{#3b82f6}{\text{This text uses a custom hex color}}$
 ![FreeRTOS](https://img.shields.io/badge/FreeRTOS-10b981?style=for-the-badge&logoColor=white)
 
 ![Status](https://img.shields.io/badge/Status-Active-success)
+![Status](https://img.shields.io/badge/Status-Coming%20Soon-orange)
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![Status](https://img.shields.io/badge/Status-Work%20in%20Progress-f59e0b)
+![Status](https://img.shields.io/badge/Status-Testing%20%26%20QA-informational)
+![Status](https://img.shields.io/badge/Status-Field%20Testing-blue)
+![Status](https://img.shields.io/badge/Status-Prototyping-8b5cf6)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
+![Status](https://img.shields.io/badge/Status-Maintained-green)
+![Status](https://img.shields.io/badge/Status-Failed-critical)
+![Status](https://img.shields.io/badge/Status-Deprecated-red)
+![Status](https://img.shields.io/badge/Status-On%20Hold-important)
+![Status](https://img.shields.io/badge/Status-Future%20Roadmap-blueviolet)
+![Status](https://img.shields.io/badge/Status-Planned-9333ea)
+![Status](https://img.shields.io/badge/Status-Under%20Review-inactive)
+
+<!-- Large Style Example -->
+![Status](https://img.shields.io/badge/Status-Coming%20Soon-orange?style=for-the-badge)
+
+<!-- Square Style Example -->
+![Status](https://img.shields.io/badge/Status-Future%20Roadmap-blueviolet?style=flat-square)
+
 
 
 <details>
