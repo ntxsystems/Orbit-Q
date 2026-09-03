@@ -44,5 +44,11 @@ Here is the detailed content or code block hidden inside.
 
 </details>
 
+- [x] Completed task
+- [ ] Pending task
 
+```python
+def greet(name):
+    print(f"Hello, {name}!")
+```
 
