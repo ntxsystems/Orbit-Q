@@ -81,6 +81,14 @@ while True:
    - Select MicroPython device when prompted.
    - Name the file main.py and click OK. (MicroPython automatically executes main.py upon power-up/reset).
 
+<div align="center" markdown>
+
+<video autoplay muted loop playsinline width="30%">
+  <source src="/Orbit-Q/Tutorials/MCU-Cards/STM32F405/Micro-Python/LED-Blink-Example/media/Blink-pc13-video-python.mp4">
+</video>
+
+</div>
+
 !!! success "Expected Output"
 The green status LED on your STM32F405 MCU card will turn ON for 1 second and OFF for 1 second in a continuous loop, while "LED ON" and "LED OFF" messages print sequentially in the Thonny Shell.  
 
