@@ -125,9 +125,13 @@ The card system does something similar for the learning curve. On Arduino or ESP
 
 ---
 
+<div align="center" markdown>
+
 <video autoplay muted loop playsinline width="60%">
   <source src="/Orbit-Q/images/videos/orbit-q-video-001.mp4" type="video/mp4">
 </video>
+
+</div>
 
 ---
 
