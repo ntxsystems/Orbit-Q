@@ -87,7 +87,9 @@ This documentation outlines the hardware specifications, layout features, and pi
 
 Because `PC13` is utilized by the onboard status LED, it is omitted from the standard edge connector interface. However, dedicated test/solder pads are provided on the PCB for advanced access:
 
-* `3V3` — Power rail access
+* <kbd>3V3</kbd> — Power rail access
+
+`3V3` — Power rail access
 
 * `GND` — Ground reference
 
