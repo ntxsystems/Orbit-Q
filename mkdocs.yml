@@ -69,6 +69,5 @@ nav:
                   - Oled Display Example: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Oled-Display-Example/text.md"
                   - SD-Card Example: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/SD-Card-Example/text.md"
               - Micro Python:
-                  - Getting Started: "
-                  - LED Blink: 
+                  - LED Blink: "Tutorials/MCU-Cards/STM32F405/Micro-Python/LED-Blink-Example/text.md"
 
