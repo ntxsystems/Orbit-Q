@@ -89,17 +89,15 @@ Because `PC13` is utilized by the onboard status LED, it is omitted from the sta
 
 * <kbd>3V3</kbd> — Power rail access
 
-`3V3` — Power rail access
+* <kbd>GND</kbd> — Ground reference
 
-* `GND` — Ground reference
+* <kbd>SWDIO</kbd> — Serial Wire Debug Data
 
-* `SWDIO` — Serial Wire Debug Data
+* <kbd>SWCLK</kbd> — Serial Wire Debug Clock
 
-* `SWCLK` — Serial Wire Debug Clock
+* <kbd>BOOT1</kbd> — **BOOT1* configuration point
 
-* `BOOT1` — `BOOT1` configuration point
-
-* `PC13` — Direct access pad for pin `PC13` (bypassing the basic interface)
+* <kbd>PC13</kbd> — Direct access pad for pin **PC13* (bypassing the basic interface)
 
 
 ## 1. Complete M.2 Pinout Mapping (Pins 1–68)
