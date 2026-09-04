@@ -15,7 +15,7 @@
 
 ## A Modular Development Workstation with Swappable MCU Architecture for Embedded, Robotics, and Drone Applications
 
-![Orbit-Q Board](images/image_9cbed628.png)
+![Orbit-Q Board](images/vibe3d-render-64e02aa3.jpg)
 
 
 
