@@ -33,7 +33,7 @@ This guide assumes MicroPython firmware with native USB VCP stack support is alr
 ### 3. Code Example
 
 **Create a new file in Thonny IDE (Ctrl + N) and paste the following script:**
-
+```cpp
 # ===========================================================================
 # File:         blink_pc13.py
 # Description:  Simple LED blink example to verify board functionality.
@@ -71,3 +71,22 @@ while True:
     led.value(0)      # Turn LED OFF
     print("LED OFF")
     time.sleep(1)     # Wait for 1 second
+```
+
+### 4. Run and Save
+
+- Run Interactively: Click the Run current script button (or press F5) in Thonny to start execution immediately.
+- Save to Run on Power-Up:
+   - Go to File > Save as...
+   - Select MicroPython device when prompted.
+   - Name the file main.py and click OK. (MicroPython automatically executes main.py upon power-up/reset).
+
+!!! success "Expected Output"
+The green status LED on your STM32F405 MCU card will turn ON for 1 second and OFF for 1 second in a continuous loop, while "LED ON" and "LED OFF" messages print sequentially in the Thonny Shell.  
+
+### Troubleshooting
+??? bug "REPL Connection Failed or USB Device Not Detected"
+- Wrong USB Port: Ensure the USB Type-C cable is connected directly to the USB-OTG port on the STM32F405 MCU card rather than an external bridge or power-only port.
+- Device Busy / REPL Locked: Click the red Stop / Restart backend button in Thonny or press Ctrl + C in the Shell to interrupt any running code blocking the REPL.
+- USB CDC Driver Issues: On Windows, verify under Device Manager > Ports (COM & LPT) that the device appears as a USB Serial Device (VCP). If missing, check USB cable power/data capabilities.
+- Standalone Execution: To run the code autonomously without being tethered to Thonny, ensure the file is named specifically as main.py directly on the MicroPython filesystem.
