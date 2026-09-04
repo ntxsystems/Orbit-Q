@@ -8,6 +8,7 @@
 ![TRL](https://img.shields.io/badge/TRL-5-blue)
 ![STM32](https://img.shields.io/badge/STM32-03234C?logo=stmicroelectronics&logoColor=00ECFF)
 ![Arduino](https://img.shields.io/badge/Arduino-00979D?logo=arduino&logoColor=white)
+![MicroPython](https://img.shields.io/badge/MicroPython-2B2728?logo=micropython&logoColor=white)
 
 </div>
 
