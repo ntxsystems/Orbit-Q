@@ -136,6 +136,35 @@ The comparison that matters isn't bare board price — it's total cost to a work
 * 📷 **Board Photos:** [Browse the gallery](images/readme.md)
 
 ---
+<div class="grid cards" markdown>
+
+-   :material-swap-horizontal-bold: **Swappable Compute Core**
+
+    ---
+
+    ORBIT-Q separates infrastructure from compute. The carrier provides onboard power delivery, debugging, display, and storage — the MCU itself is the only part that swaps, via a 75-position M.2 E-Key slot with a custom pinout mapping. Moving from a validation-tier MCU card to a flagship-tier one requires no rewiring and no new tooling.
+
+-   :material-tools: **Integrated Development Infrastructure**
+
+    ---
+
+    ORBIT-Q ships with an onboard ST-Link + CP2102 debug and programming interface, a 128×32 OLED status display, 10× WS2812B addressable RGB LEDs, and onboard microSD storage — the peripherals most embedded projects end up breadboarding project after project, built in instead.
+
+-   :material-flash: **Dual-Rail Power Delivery**
+
+    ---
+
+    A 24W dual-rail power system (5V @ 3A, 3.3V @ 3A) accepts 6.0V–16.8V DC input via barrel jack or battery solder pads, removing the need for a separate bench supply during development.
+
+-   :material-vector-line: **Full GPIO and Peripheral Access**
+
+    ---
+
+    68 raw GPIO signals are broken out across three headers (A, B, C), alongside dedicated SPI, I²C, UART, and dual power rails routed through the M.2 connector to the MCU card — full access to the target processor's capability, not a reduced subset.
+
+</div>
+
+----
 
 ## License
 
