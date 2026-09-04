@@ -1,26 +1,23 @@
 <div align="center" markdown>
 
 # ORBIT-Q
+## Modular Embedded Development Workstation
 
-### Modular Embedded Development Workstation
-
-![Status](https://img.shields.io/badge/Status-Active%20Development-success)
-![TRL](https://img.shields.io/badge/TRL-5-blue)
-![STM32](https://img.shields.io/badge/STM32-03234C?logo=stmicroelectronics&logoColor=00ECFF)
-![Arduino](https://img.shields.io/badge/Arduino-00979D?logo=arduino&logoColor=white)
-![MicroPython](https://img.shields.io/badge/MicroPython-2B2728?logo=micropython&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active%20Development-success?style=for-the-badge)
+![TRL](https://img.shields.io/badge/TRL-5-blue?style=for-the-badge)
+![STM32](https://img.shields.io/badge/STM32-03234C?style=for-the-badge&logo=stmicroelectronics&logoColor=00ECFF)
+![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
+![MicroPython](https://img.shields.io/badge/MicroPython-2B2728?style=for-the-badge&logo=micropython&logoColor=white)
 
 </div>
 
-[View on GitHub :material-github:](https://github.com/ntxsystems/Orbit-Q){ .md-button }
-
 ---
-
-![Orbit-Q Board](images/image_9cbed628.png)
 
 ORBIT-Q is a modular development board built around a swappable M.2-format MCU card standard. The carrier provides onboard power delivery, an ST-Link + CP2102 debug/programming interface, an OLED status display, addressable RGB LEDs, and microSD storage — the infrastructure most projects end up wiring up externally, built in instead. The MCU itself is the only part that swaps, via a 75-position M.2 E-Key slot with a custom pinout mapping.
 
-| | |
+![Orbit-Q Board](images/image_9cbed628.png)
+
+
 | :--- | :--- |
 | **Manufacturer** | NTX Systems Pvt. Ltd. |
 | **Current MCU Cards** | STM32F103 (Cortex-M3), STM32F405 (Cortex-M4, hardware FPU) |
