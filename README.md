@@ -2,9 +2,12 @@
 
 # ORBIT-Q
 
-### The Modular Embedded Development Workstation
+### Modular Embedded Development Workstation
 
-**Official documentation, datasheets, pinout guides, and code examples for the Orbit-Q development board by NTX SYSTEMS.**
+![Status](https://img.shields.io/badge/Status-Active%20Development-success)
+![TRL](https://img.shields.io/badge/TRL-5-blue)
+![STM32](https://img.shields.io/badge/STM32-03234C?logo=stmicroelectronics&logoColor=00ECFF)
+![Arduino](https://img.shields.io/badge/Arduino-00979D?logo=arduino&logoColor=white)
 
 </div>
 
@@ -14,44 +17,40 @@
 
 ![Orbit-Q Board](images/image_9cbed628.png)
 
-## Why ORBIT-Q Exists
-Most major hardware ecosystems have a reference dev board behind them: Raspberry Pi for the UK, the ESP series out of China, ST Nucleo and Arduino out of Europe, Teensy/Adafruit/SparkFun out of the US. India didn't have an equivalent of its own — that was the starting gap.
+ORBIT-Q is a modular development board built around a swappable M.2-format MCU card standard. The carrier provides onboard power delivery, an ST-Link + CP2102 debug/programming interface, an OLED status display, addressable RGB LEDs, and microSD storage — the infrastructure most projects end up wiring up externally, built in instead. The MCU itself is the only part that swaps, via a 75-position M.2 E-Key slot with a custom pinout mapping.
 
-But a dev board on its own isn't a reason to build anything; the interesting part was working out why that gap existed, not just that it did. Looking at what people in India actually reach for:
+| | |
+| :--- | :--- |
+| **Manufacturer** | NTX Systems Pvt. Ltd. |
+| **Current MCU Cards** | STM32F103 (Cortex-M3), STM32F405 (Cortex-M4, hardware FPU) |
+| **Roadmap** | ESP32, RP2040, CDAC Vega (RISC-V), nRF54, FPGA |
+| **Programming** | C / C++ (Arduino Framework), MicroPython |
+| **Hardware Design** | Proprietary / Closed-hardware |
+| **Documentation & Drivers** | Open-source (MIT License) |
 
-- **Arduino and ESP32 dominate** — they're cheap, and the volume of online projects/tutorials makes them the path of least resistance.
-- **ST Nucleo sees some use, but rarely** — despite STM32 being the MCU family behind a large share of real unmanned/embedded systems work, it's underused at the learning stage.
-- **Raspberry Pi shows up for a different reason** — it's a full SBC, not strictly a dev board, and it gets picked when a project wants to show AI/advanced-compute capability rather than do MCU-level embedded work.
+---
 
-Many development boards are built around a single processor and provide only the essentials needed to get that processor running. As projects become more ambitious, users often end up adding programmers, power supplies, USB interfaces, displays, storage and other peripheral modules around the board. Moving to a different processor usually means changing the entire setup as well.
+## Full Technical Specifications
 
-!!! tip "The Orbit-Q Philosophy"
-    **ORBIT-Q was designed to remove that fragmentation:** provide the development infrastructure in one reusable platform, while making the compute module itself replaceable.
+| Parameter | Specification |
+| :--- | :--- |
+| **Input Voltage Range** | 6.0 V – 16.8 V DC (Recommended 12 V DC) |
+| **Absolute Max Input** | 20.0 V DC |
+| **Power Supply Inputs** | DC barrel jack + battery solder pads (mutually exclusive) |
+| **Recommended Supply** | 12 V DC, 2.5 A or greater |
+| **PWR-1 Rail** | 5.0 V @ 3 A (OLED, LEDs, SD card slot, M.2 slot) |
+| **PWR-2 Rail** | 3.3 V @ 3 A (independent, reserved for external expansion) |
+| **MCU Interface** | 75-position M.2 E-Key slot, custom pinout mapping |
+| **GPIO Breakout** | 68 pins across 3 headers (A, B, C) |
+| **Status Display** | 128×32 monochrome OLED, I²C (default address 0x3C) |
+| **Addressable Lighting** | 10× WS2812B addressable RGB LEDs (5V rail) |
+| **Data Storage** | Onboard microSD, SPI interface, 3.3V LDO |
+| **USB-to-UART Bridge** | CP2102, USB Type-C, USB 2.0 Full Speed |
+| **Hardware Debugger** | ST-Link V2 compatible (dedicated STM32F103), USB-C SWD port |
 
 ---
 
 ![Orbit-Q Board](<images/Yellow and Blue Modern Logistics Company Profile A4 Document.png>)
-
----
-
-## Designing for the Market Reality
-
-That's the problem ORBIT-Q was built to close, not just "make a board." The design decisions map directly to the findings above:
-
-- **Onboard ST-Link + CP2102:** Removes the external-programmer step that keeps people off STM32; the CP2102 UART bridge isn't STM32-specific, so it's useful with other MCU cards too.
-- **Proper onboard power delivery:** (24W, dual-rail) removes the "every project needs its own supply" problem common to all the boards above.
-- **OLED display, addressable LEDs, microSD:** These are the peripherals that show up in most real projects anyway (status output, visual feedback, data logging), so they're built in rather than breadboarded each time.
-- **M.2 swappable MCU card:** The real fragmentation problem isn't Arduino vs. STM32 vs. ESP32, it's that switching between them means rebuilding your whole setup. Making the MCU itself the only part that swaps solves that directly.
-
-The goal wasn't just to close the gap — it was to close it in a way that actually fits the market. A price-sensitive market doesn't just want a cheaper board; it wants a lower total cost to get to a working setup. Comparing bare board prices misses that most of the real cost is external — a programmer, a power supply, breadboarded peripherals for every project. Folding those into one board changes the comparison from "board vs. board" to **"total setup cost vs. total setup cost,"** and that's where the price argument actually holds.
-
-The card system does something similar for the learning curve. On Arduino or ESP32, moving to a more capable architecture usually means starting over on a new board, new wiring, new tooling. On ORBIT-Q, the same carrier carries you from a basic validation-tier MCU card to a flagship-tier one — the STM32F103 card to the STM32F405 and beyond — without rebuilding anything. That matters specifically because STM32 is the more relevant architecture for real unmanned/embedded work and stays underlearned for exactly the setup-friction reasons above.
-
-> The result is a single board that carries everything a project usually needs onboard, with the MCU as the one modular part — the same model a desktop PC uses: change the part that needs changing (CPU/GPU), keep everything else (power supply, case, peripherals) as-is.
-
----
-
-![Orbit-Q Board](images/example-code-001.jpeg)
 
 ---
 
@@ -99,29 +98,27 @@ The card system does something similar for the learning curve. On Arduino or ESP
 
     ---
 
-    Wireless targets (ESP32 / nRF series), RISC-V (CDAC Vega), and FPGA module cards. *(Roadmap items, not shipping yet)*.
+    ESP32, RP2040, CDAC Vega (RISC-V), nRF54, and FPGA module cards, at roughly 60–90 day intervals. *(Roadmap items, not shipping yet.)*
 
 </div>
 
+!!! note "Beyond the Dev Board"
+    The same MCU card standard extends to at least four carrier form factors — an education baseboard, a robotics mini carrier, a wireless-first carrier, and a modular drone baseboard — all electrically and mechanically compatible with the cards above.
+
 ---
 
-## Full Technical Specifications
+![Orbit-Q Board](images/example-code-001.jpeg)
 
-| Parameter | Specification |
-| :--- | :--- |
-| **Input Voltage Range** | 6.0 V – 16.8 V DC (Recommended 12 V DC) |
-| **Absolute Max Input** | 20.0 V DC |
-| **Power Supply Inputs** | DC barrel jack + battery solder pads (mutually exclusive) |
-| **Recommended Supply** | 12 V DC, 2.5 A or greater |
-| **PWR-1 Rail** | 5.0 V @ 3 A (OLED, LEDs, SD card slot, M.2 slot) |
-| **PWR-2 Rail** | 3.3 V @ 3 A (independent, reserved for external expansion) |
-| **MCU Interface** | 75-position M.2 E-Key slot, custom pinout mapping |
-| **GPIO Breakout** | 68 pins across 3 headers (A, B, C) |
-| **Status Display** | 128×32 monochrome OLED, I²C (default address 0x3C) |
-| **Addressable Lighting** | 10× WS2812B addressable RGB LEDs (5V rail) |
-| **Data Storage** | Onboard microSD, SPI interface, 3.3V LDO |
-| **USB-to-UART Bridge** | CP2102, USB Type-C, USB 2.0 Full Speed |
-| **Hardware Debugger** | ST-Link V2 compatible (dedicated STM32F103), USB-C SWD port |
+---
+
+## Why STM32, and Why Modular
+
+Arduino and ESP32 dominate India's embedded landscape on cost and tutorial volume; STM32 stays underused at the learning stage despite being the more relevant architecture for real unmanned/embedded systems work. Raspberry Pi, meanwhile, is typically chosen for AI/compute showcase projects rather than MCU-level work.
+
+The comparison that matters isn't bare board price — it's total cost to a working setup, once an external programmer, power supply, and breadboarded peripherals are accounted for. ORBIT-Q folds those into the board itself, and the M.2 card system means moving from a validation-tier MCU to a flagship-tier one doesn't require rebuilding the setup from scratch.
+
+!!! quote ""
+    First introduced to the r/embedded community without any product branding, as a blind technical validation test — 9,000+ views, a 98% upvote ratio, and direct feedback from engineers in the STM32 community.
 
 ---
 
@@ -138,18 +135,7 @@ The card system does something similar for the learning curve. On Arduino or ESP
 ## Quick Resources
 
 * 📄 **Datasheet:** [Download Orbit-Q Datasheet PDF](./Orbit-Q%20Datasheet.pdf)
-* 📷 **Board Photos:** [Browse high-resolution imagery on GitHub](https://github.com/ntxsystems/Orbit-Q/tree/main/images)
-
----
-
-## Overview
-
-Orbit-Q is a modular development board engineered by **NTX Systems Pvt. Ltd.** for rapid prototyping across embedded systems, IoT, and robotics projects.
-
-* **Manufacturer:** NTX Systems Pvt. Ltd.
-* **Programming Languages:** C / C++ (Arduino Framework), MicroPython
-* **Documentation & Drivers:** Open-source
-* **Hardware Design:** Proprietary / Closed-hardware
+* 📷 **Board Photos:** [Browse the gallery](images/readme.md)
 
 ---
 
