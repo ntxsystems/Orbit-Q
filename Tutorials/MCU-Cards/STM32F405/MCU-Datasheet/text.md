@@ -69,7 +69,7 @@ This documentation outlines the hardware specifications, layout features, and pi
 - Part Number: `D091125APTYF405A01`
 
 <div align="center" markdown>
-<img src="/Orbit-Q/images/MCU%20E-CARD.png" alt="Step 1" width="60%">
+<img src="/Orbit-Q/Tutorials/MCU-Cards/STM32F405/MCU-Datasheet/images/MCU%20E-CARD.png" alt="Step 1" width="60%">
 </div>
 
 ### Power Management & Safety
