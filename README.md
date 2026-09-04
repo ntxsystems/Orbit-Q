@@ -123,7 +123,7 @@ The comparison that matters isn't bare board price — it's total cost to a work
 
 <div align="center" markdown>
 
-<video autoplay muted loop playsinline width="60%">
+<video autoplay muted loop playsinline width="30%">
   <source src="/Orbit-Q/images/videos/orbit-q-video-001.mp4" type="video/mp4">
 </video>
 
@@ -131,7 +131,7 @@ The comparison that matters isn't bare board price — it's total cost to a work
 
 <div align="center" markdown>
 
-<video autoplay muted loop playsinline width="60%">
+<video autoplay muted loop playsinline width="30%">
   <source src="/Orbit-Q/images/videos/orbit-q-python-example.mp4" type="video/mp4">
 </video>
 
