@@ -143,7 +143,7 @@ Because `PC13` is utilized by the onboard status LED, it is omitted from the sta
 
 ## 2. Onboard Peripherals & Default Pin Mapping
 
-*   **Onboard OLED Display ($128\times32$, SSD1306):**
+*   **Onboard OLED Display (128 X 32, SSD1306):**
     *   **Protocol:** I2C1 (`PB6` = SCL, `PB7` = SDA)
     *   **I2C Address:** `0x3C`
     *   **Isolation Jumper:** **JP-2** (Bridge to connect MCU to display)
