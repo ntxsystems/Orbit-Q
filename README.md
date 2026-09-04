@@ -13,13 +13,14 @@
 
 ---
 
-ORBIT-Q is a modular development board built around a swappable M.2-format MCU card standard. The carrier provides onboard power delivery, an ST-Link + CP2102 debug/programming interface, an OLED status display, addressable RGB LEDs, and microSD storage — the infrastructure most projects end up wiring up externally, built in instead. The MCU itself is the only part that swaps, via a 75-position M.2 E-Key slot with a custom pinout mapping.
+## A Modular Development Workstation with Swappable MCU Architecture for Embedded, Robotics, and Drone Applications
 
 ![Orbit-Q Board](images/image_9cbed628.png)
 
 
-| :--- | :--- |
+
 | **Manufacturer** | NTX Systems Pvt. Ltd. |
+| :--- | :--- |
 | **Current MCU Cards** | STM32F103 (Cortex-M3), STM32F405 (Cortex-M4, hardware FPU) |
 | **Roadmap** | ESP32, RP2040, CDAC Vega (RISC-V), nRF54, FPGA |
 | **Programming** | C / C++ (Arduino Framework), MicroPython |
