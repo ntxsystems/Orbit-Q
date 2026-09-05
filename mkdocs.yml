@@ -51,6 +51,8 @@ markdown_extensions:
 
 nav:
   - Home: README.md
+  - Products:
+  - Services:
   - Gallery: images/readme.md
   - Datasheet: "Orbit-Q Datasheet.pdf"
   - Tutorials:
@@ -70,4 +72,5 @@ nav:
                   - SD-Card Example: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/SD-Card-Example/text.md"
               - Micro Python:
                   - LED Blink: "Tutorials/MCU-Cards/STM32F405/Micro-Python/LED-Blink-Example/text.md"
+  - Contact Us:
 
