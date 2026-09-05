@@ -51,8 +51,8 @@ markdown_extensions:
 
 nav:
   - Home: README.md
-  - Products: "Products/text.md"
-  - Services: "Services/text.md"
+  - Products: " Orbit-Q/Products/text.md"
+  - Services: "Orbit-Q/Services/text.md"
   - Gallery: images/readme.md
   - Datasheet: "Orbit-Q Datasheet.pdf"
   - Tutorials:
