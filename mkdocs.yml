@@ -56,6 +56,9 @@ nav:
   - Services: "Services/text.md"
   - Gallery: images/readme.md
   - Datasheet: "Orbit-Q Datasheet.pdf"
+  - Projects: 
+      - Arduino IDE:
+          - Orbit-Q Visualizer: "Projects/Arduino IDE/Orbit-Q Visualizer/text.md"
   - Tutorials:
       - MCU Cards:
           - STM32F103:
