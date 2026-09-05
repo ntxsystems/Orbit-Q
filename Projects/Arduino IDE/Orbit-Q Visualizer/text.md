@@ -39,8 +39,7 @@ Transitions fade in/out over 600 ms so mode changes aren't an abrupt cut.
 
 ### CODE
 
-`
-cpp
+```cpp
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -672,8 +671,44 @@ void ntxBootAnimation() {
 
   display.setFont(); // reset to default font for main show
 }
-`
+```
+
 ### 4. Core concept: one shared clock drives everything 
+Almost every animation bug in multi-effect demos comes from each effect keeping its own independent counter, which drifts and desyncs. This sketch avoids that with a single global:
+```cpp
+float phase = 0.0f;
+const float PHASE_STEP = 0.045f;
+```
+`phase` advances by `PHASE_STEP` exactly once per rendered frame, in `updateShow()`. Every mode's math is a function of this one variable — `waveAt(x, t)`, `plasmaField(x, y, t)`, `barEnvelope(i, t)` all take `t` as an argument, and that `t` is always `phase`.
+The payoff is Mode 0: the OLED draws `waveAt(x, t)` for `x` from 0–127. The LED strip then calls the same function for `x = 128, 135, 142...` — positions that would sit just past the right edge of the screen if it kept going. The strip isn't imitating the wave; it's mathematically continuing it. Mode 2 (plasma) does the identical trick in 2D. This is why `PHASE_STEP` is the one knob that speeds up or slows down the entire show in perfect sync — change it and both the screen and the strip move together, because they're reading the same clock.
+
+### 5. Why there's a sine lookup table (even with a hardware FPU)
+```cpp
+const int8_t SINE_TABLE[256] = { ... };
+inline float fastSinF(float radians) { return sinTab(angleIdx(radians)); }
+```
+The STM32F405RGT6 has a hardware FPU, so `sinf()/cosf()` are hardware-accelerated on this card, not software-emulated — this is a different situation from the F103 "blue pill," where the same LUT is load-bearing because that MCU has no FPU at all.
+* A 256-entry table lookup is still cheaper per call than a full transcendental function, so it's not wasted effort even with an FPU present.
+* It keeps the math identical across every ORBIT-Q MCU card — F103, F405, and future cards on the roadmap — so the same sketch behaves identically regardless of which card it's running on
+
+If you're optimizing purely for the F405RGT6's headroom and don't need that cross-card consistency, you can swap `fastSinF`/`fastCosF` for direct `sinf`/`cosf` calls — the hardware FPU handles it comfortably inside the 20 ms frame budget.
+* `angleIdx(radians)` — converts any angle (including negative or >2π) into an index 0–255
+* `sinTab(idx)` / `cosTab(idx)` — table lookup, normalized back to −1.0..1.0 (cosine is just sine read 64 slots ahead, since cos(θ) = sin(θ + π/2), and 64/256 = a quarter turn)
+* `fastSinF()` / `fastCosF()` — the drop-in replacements used everywhere else in the code
+
+If you're porting this to classic AVR (Uno/Nano): wrap the table in `PROGMEM` and read with `pgm_read_byte()`, since AVR doesn't have the flash-mapped memory that STM32/ESP32/SAMD have. On F405, no changes needed.
+
+### 6. The non-blocking timing pattern
+Nothing in the main show uses `delay()` — that would freeze the LED strip while the OLED draws, or vice versa. Instead it's a classic `millis()`-paced state machine:
+```cpp
+void loop() {
+  blinkPC13();
+  updateShow();
+}
+```
+`blinkPC13()` toggles the status LED every 500 ms by checking elapsed time, not by sleeping. `updateShow()` does the same for frame pacing:
+
+
 
 
 
