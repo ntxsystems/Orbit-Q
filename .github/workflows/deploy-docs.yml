@@ -32,6 +32,7 @@ jobs:
              cp -r Tutorials docs/ 2>/dev/null || true
              cp -r Products docs/ 2>/dev/null || true
              cp -r Services docs/ 2>/dev/null || true
+             cp -r Projects docs/ 2>/dev/null || true
              cp -r Contact-Us docs/ 2>/dev/null || true
              cp "Orbit-Q Datasheet.pdf" docs/ 2>/dev/null || true
              cp -r images docs/ 2>/dev/null || true
