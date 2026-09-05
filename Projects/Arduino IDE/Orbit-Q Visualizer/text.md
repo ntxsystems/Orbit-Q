@@ -707,7 +707,63 @@ void loop() {
 }
 ```
 `blinkPC13()` toggles the status LED every 500 ms by checking elapsed time, not by sleeping. `updateShow()` does the same for frame pacing:
+```cpp
+if (now - frameMillis < FRAME_MS) return;   // not time for a new frame yet
+```
+This means `loop()` runs continuously and returns instantly most of the time — both timers just check "has enough time passed?" independently, so they never block each other.
+The only place `delay()` shows up at all is `ntxBootAnimation()`, which is explicitly a one-time sequence at boot, before the main loop starts.
 
+### 7. How mode switching and fades work
+```cpp
+const uint32_t MODE_DURATION[NUM_MODES] = { 16000, 15000, 17000, 15000, 17000, 14000 };
+```
+Each mode gets its own duration (tunable per-effect, not one fixed length for all six). `updateShow()` checks elapsed time in the current mode against this array; when it expires, it advances to the next mode and calls `resetModeState(currentMode)`.
+That reset call matters: Mode 3's radar blips, Mode 4's peak-hold level, and Mode 5's column phases are all stateful between frames. Without resetting them on mode entry, switching into radar sweep could start with a blip already at full brightness from whatever value was left over — visually wrong, and confusing to debug. `resetModeState()` zeroes exactly the state each mode owns.
+The fade multiplier is computed the same way for every mode:
+```cpp
+if (elapsed < TRANSITION_MS)        fade = elapsed / TRANSITION_MS;        // fading in
+else if (elapsed > dur - TRANSITION_MS) fade = (dur - elapsed) / TRANSITION_MS; // fading out
+```
+`fade` (0.0–1.0) is passed into every render function and multiplied into `pixels.setBrightness()`. The OLED doesn't fade (1-bit display, no brightness channel to scale) — only the LED strip dims at transition edges.
+
+### 8. Walking through each mode
+
+**Mode 0** — Wave Cross: `waveAt(x, t)` sums two sine waves at different frequencies and speeds (`0.6*sin(x*0.055+t) + 0.4*sin(x*0.13-1.35t)`), producing a non-repeating scrolling waveform rather than a single clean sine. The LED strip samples this same function at `x = 128 + i*7`.
+
+**Mode 1** — Orbit Sweep: a single angle `t` drives an elliptical orbit (`rx=50, ry=9`) with a 6-sample fading trail on the OLED, drawn oldest-to-newest so the newest point is a filled circle and the rest are single pixels. The LED strip maps the same angle to a strip position (`angleNorm / 2π * NUMPIXELS`) and colors the whole strip by hue-shifting with that angle, creating a soft comet via a falloff function (`1 - d/2.2`).
+
+**Mode 2** — Plasma Bloom: `plasmaField(x, y, t)` sums three sine harmonics at different (x, y, t) weightings — the classic three-oscillator plasma technique. Since the OLED is 1-bit (no grayscale), the sketch renders at quarter resolution (32×8 grid of 4×4 blocks) and fakes a mid-tone with two brightness thresholds instead of one, giving a rough 3-level dither. The strip again samples the identical field function off-screen.
+
+**Mode 3** — Radar Sweep: a dotted ellipse outline is drawn once per frame using the sine table directly (`cosTab(s)`/`sinTab(s)` stepped by index, not angle — slightly cheaper than calling `fastCosF` repeatedly). Four fixed target blips (defined once in the `Blip` struct array) light up when the sweep angle passes within 0.12 radians of them, then decay by ×0.93 per frame — an exponential decay, not a linear one, which is why the flash feels like a fade rather than a countdown. The strip mirrors the sweep as a sharp point (steeper falloff, `d/1.3` vs Mode 1's `d/2.2`) deliberately, so it reads as a hard radar blip rather than a soft comet.
+
+**Mode 4** — VU Spectrum (labeled honestly as simulated): there is no microphone on this board. `barEnvelope(i, t)` fakes an audio-reactive look by summing a slow "base" sine and a faster "jitter" sine per bar, each with a different frequency multiplier and phase offset per bar index `i` — this is what makes the 8 bars move independently instead of in lockstep. The strip becomes a level meter: `peakLevel` uses a decay formula (`fmaxf(level, peakLevel * 0.985)`) that's a standard VU meter behavior — it snaps up instantly on a peak but drifts down slowly, so the peak-hold marker is readable.
+
+**Mode 5** — Matrix Cascade: deliberately avoids trig entirely, for technique variety. Each of 16 columns has a fixed `speed` and `offset`, and its vertical position is `fmodf(t * speed * 6 + offset, cycleLen)` — a direct position function, not something integrated frame-by-frame. Because `prevDropPos[i]` is compared against the current position each frame, a wraparound (`dropPos < prevDropPos[i]`) is detected the instant a column's drop crosses back to the top — which visually means it just fell off the bottom of the screen. That's the trigger for flashing the mapped LED, using the same "screen edge continues onto the strip" metaphor as Mode 0, just triggered by an event instead of continuous sampling.
+
+### 9. The boot sequence
+`ntxBootAnimation()` runs once in `setup()`, before the main loop starts — it's the one place `delay()` is acceptable, since nothing else needs to run concurrently at boot:
+* Slides "NTX" (bold font) + "SYSTEMS" (regular font) in from off-screen left, redrawing every 2px
+* Draws an underline that grows left-to-right beneath the wordmark
+* Chases a color band across the LED strip using the same SINE_TABLE-backed HSV coloring as the main show, rather than a flat single-color flash — visually ties the boot sequence to the show that follows
+
+### 10. Uploading
+* Install the STM32 board package and the three Adafruit libraries listed above.
+* Board: select the STM32F405RGT6 variant in Boards Manager (STM32duino).
+* Upload method: ST-Link (or your usual method for the ORBIT-Q board).
+* Wire OLED to I2C1, strip data to PB3, confirm 3.3V power to both.
+* Upload. On first boot, you should see the NTX wordmark slide in, followed by the LED color-chase, then Mode 0 starting.
+
+### 11. Tuning it for your own build
+* Overall speed: `PHASE_STEP` — smaller = slower, larger = faster. This shifts every mode at once since they all share `phase`.
+* Time per mode: edit `MODE_DURATION[]` — each entry is milliseconds for that mode index.
+* Brightness ceiling: `MAX_BRIGHTNESS` (0–255) — this is a cap, not a fixed value; `fade` still scales beneath it during transitions.
+* Frame rate: `FRAME_MS` — 20 ms targets ~50 fps; raising this reduces CPU load if you add more modes later. On F405, there's real headroom to push this lower if you add more modes.
+
+### 12. If something doesn't come up
+* OLED stays blank / sketch hangs at boot: `display.begin()` failing drops into `while(1)`; intentionally — check the I2C address (`0x3C` here; some SSD1306 modules ship as `0x3D`) and wiring first.
+* LEDs don't light: confirm `WS_PIN` matches your actual data-line connection, and that the strip's ground is common with the board's ground.
+* Animations look wrong-speed but not frozen: check `PHASE_STEP` and `FRAME_MS` — if `FRAME_MS` is too small for the board to keep up, frames will still run but pacing may drift under load.
+* Porting to AVR (Uno/Nano) and it won't compile or behaves oddly: wrap `SINE_TABLE` in `PROGMEM` and switch lookups to `pgm_read_byte()` — this table is currently written assuming flash-mapped memory access (fine on STM32/ESP32/SAMD, not on classic AVR).
 
 
 
