@@ -1,53 +1,53 @@
 # Contact Us
 
-Have a question about Orbit-Q, need technical support, or want to share feedback? We'd love to hear from you.
+Have a question about Orbit-Q, need technical support, or want to share feedback? Reach out — we typically respond within 1–2 business days.
 
 <div class="contact-grid" markdown>
 
-<div class="contact-form" markdown>
+<div class="contact-card" markdown>
 
-## Send us a message
+### :material-help-circle: General Inquiry
+Questions about Orbit-Q, specs, or documentation.
 
-<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="ntx-form">
-  <label for="name">Name</label>
-  <input type="text" id="name" name="name" required>
-
-  <label for="email">Email</label>
-  <input type="email" id="email" name="_replyto" required>
-
-  <label for="subject">Subject</label>
-  <select id="subject" name="subject">
-    <option value="General Inquiry">General Inquiry</option>
-    <option value="Technical Support">Technical Support</option>
-    <option value="Feedback">Feedback</option>
-    <option value="Institutional / Bulk Order">Institutional / Bulk Order</option>
-  </select>
-
-  <label for="message">Message</label>
-  <textarea id="message" name="message" rows="6" required></textarea>
-
-  <input type="hidden" name="_subject" value="New message from Orbit-Q site">
-  <button type="submit">Send Message</button>
-</form>
+[Email Us](mailto:siddhantgupta1502@gmail.com?subject=Orbit-Q%20Inquiry){ .md-button }
 
 </div>
 
-<div class="contact-info" markdown>
+<div class="contact-card" markdown>
 
-## Other ways to reach us
+### :material-wrench: Technical Support
+Having an issue with your board or a tutorial?
 
-**Email**
-[contact@ntxsystems.in](mailto:contact@ntxsystems.in)
-
-**Location**
-Lucknow, Uttar Pradesh, India
-
-**GitHub**
-[github.com/ntxsystems](https://github.com/ntxsystems)
-
-**Response Time**
-We typically respond within 1–2 business days.
+[Get Support](mailto:siddhantgupta1502@gmail.com?subject=Orbit-Q%20Support%20Request&body=Board%20version%3A%0AIssue%20description%3A%0A){ .md-button }
 
 </div>
+
+<div class="contact-card" markdown>
+
+### :material-message-star: Feedback
+Suggestions, bug reports, or ideas for Orbit-Q.
+
+[Send Feedback](mailto:siddhantgupta1502@gmail.com?subject=Orbit-Q%20Feedback){ .md-button }
+
+</div>
+
+<div class="contact-card" markdown>
+
+### :material-domain: Bulk / Institutional Orders
+Buying for a lab, college, or in quantity?
+
+[Contact Sales](mailto:siddhantgupta1502@gmail.com?subject=Orbit-Q%20Institutional%20Order%20Inquiry){ .md-button }
+
+</div>
+
+</div>
+
+---
+
+**Other ways to reach us**
+
+- **Email:** [siddhantgupta1502@gmail.com](mailto:siddhantgupta1502@gmail.com)
+- **Location:** Lucknow, Uttar Pradesh, India
+- **GitHub:** [github.com/ntxsystems](https://github.com/ntxsystems)
 
 </div>
