@@ -122,19 +122,18 @@ The comparison that matters isn't bare board price — it's total cost to a work
 ---
 
 <div align="center" markdown>
-
-<video autoplay muted loop playsinline width="50%">
+<div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;" markdown>
+<div style="width:48%; min-width:280px;" markdown>
+<video autoplay muted loop playsinline width="100%">
   <source src="/Orbit-Q/images/videos/orbit-q-video-001.mp4" type="video/mp4">
 </video>
-
 </div>
-
-<div align="center" markdown>
-
-<video autoplay muted loop playsinline width="50%">
+<div style="width:48%; min-width:280px;" markdown>
+<video autoplay muted loop playsinline width="100%">
   <source src="/Orbit-Q/images/videos/orbit-q-python-example.mp4" type="video/mp4">
 </video>
-
+</div>
+</div>
 </div>
 
 ---
