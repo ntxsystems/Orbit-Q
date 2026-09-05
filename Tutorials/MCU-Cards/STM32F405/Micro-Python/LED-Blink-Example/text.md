@@ -1,5 +1,5 @@
 # Orbit-Q: MicroPython Blink LED Example
-## **Learn how to configure your environment, set up Thonny IDE, and run the classic MicroPython Blink example on the STM32F405 MCU card on Orbit-Q using direct USB-OTG*
+## *Learn how to configure your environment, set up Thonny IDE, and run the classic MicroPython Blink example on the STM32F405 MCU card on Orbit-Q using direct USB-OTG*
 
 ### Hardware Overview & Mapping
 
@@ -13,6 +13,7 @@ The status LED is located directly on the STM32F405 MCU card and connected to pi
 ### 1. Thonny IDE Setup
 
 **Before running your MicroPython scripts, configure your interpreter options in Thonny IDE:**
+
 | Menu Item | Selected Setting | Notes |
 | --- | --- | --- |
 | Interpreter Kind | MicroPython (generic) or MicroPython (STM32) | Select the MicroPython runtime target |
