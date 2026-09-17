@@ -1,10 +1,9 @@
 <div align="center" markdown>
 
 # ORBIT-Q
-## Modular Embedded Development Workstation
+**One Platform. Multiple MCU Possibilities.**
 
 ![Status](https://img.shields.io/badge/Status-Active%20Development-success?style=for-the-badge)
-![TRL](https://img.shields.io/badge/TRL-5-blue?style=for-the-badge)
 ![STM32](https://img.shields.io/badge/STM32-03234C?style=for-the-badge&logo=stmicroelectronics&logoColor=00ECFF)
 ![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
 ![MicroPython](https://img.shields.io/badge/MicroPython-2B2728?style=for-the-badge&logo=micropython&logoColor=white)
@@ -13,7 +12,7 @@
 
 ---
 
-## A Modular Development Workstation with Swappable MCU Architecture for Embedded, Robotics, and Drone Applications
+ORBIT-Q is a modular embedded development platform built around a 75-position M.2 E-Key connector for compatible microcontroller modules. It combines power management, debugging, USB-to-UART, display, storage, RGB LEDs, and I/O expansion into a single development platform for rapid prototyping, embedded software development, and hardware validation.
 
 ![Orbit-Q Board](images/vibe3d-render-64e02aa3.jpg)
 
@@ -28,25 +27,178 @@
 | **Documentation & Drivers** | Open-source (MIT License) |
 
 ---
+## Contents
 
-## Full Technical Specifications
+- [Features](#features)
+- [Hardware Architecture](#hardware-architecture)
+- [Power Management](#power-management)
+- [User Interfaces](#user-interfaces)
+  - [OLED Display](#oled-display)
+  - [RGB LEDs](#rgb-leds)
+- [USB-to-UART](#usb-to-uart)
+- [M.2 E-Key Interface](#m2-e-key-interface)
+- [I/O Expansion](#io-expansion)
+- [MicroSD Card](#microsd-card)
+- [ST-LINK Debugger](#st-link-debugger)
+- [Development](#development)
+- [Documentation](#documentation)
+- [License](#license)
 
-| Parameter | Specification |
-| :--- | :--- |
-| **Input Voltage Range** | 6.0 V – 16.8 V DC (Recommended 12 V DC) |
-| **Absolute Max Input** | 20.0 V DC |
-| **Power Supply Inputs** | DC barrel jack + battery solder pads (mutually exclusive) |
-| **Recommended Supply** | 12 V DC, 2.5 A or greater |
-| **PWR-1 Rail** | 5.0 V @ 3 A (OLED, LEDs, SD card slot, M.2 slot) |
-| **PWR-2 Rail** | 3.3 V @ 3 A (independent, reserved for external expansion) |
-| **MCU Interface** | 75-position M.2 E-Key slot, custom pinout mapping |
-| **GPIO Breakout** | 68 pins across 3 headers (A, B, C) |
-| **Status Display** | 128×32 monochrome OLED, I²C (default address 0x3C) |
-| **Addressable Lighting** | 10× WS2812B addressable RGB LEDs (5V rail) |
-| **Data Storage** | Onboard microSD, SPI interface, 3.3V LDO |
-| **USB-to-UART Bridge** | CP2102, USB Type-C, USB 2.0 Full Speed |
-| **Hardware Debugger** | ST-Link V2 compatible (dedicated STM32F103), USB-C SWD port |
+## Features
 
+- Modular M.2 E-Key MCU architecture
+- 75-position M.2 E-Key connector
+- 6 V – 16.8 V DC input range
+- 5 V @ 3 A and 3.3 V @ 3 A regulated power rails
+- On-board STM32F103-based ST-LINK debugger
+- CP2102 USB-to-UART bridge
+- 128 × 32 monochrome OLED display
+- 10 × WS2812B individually addressable RGB LEDs
+- On-board microSD card interface
+- 68 accessible I/O signals
+- SPI, I²C, UART, PWM, ADC, USB and SWD interfaces
+- Jumper-configurable peripheral connections
+- Standard 2.54 mm expansion headers
+
+## Hardware Architecture
+
+ORBIT-Q separates the microcontroller module from the main development platform.
+
+The M.2 E-Key connector acts as the central interface between the installed microcontroller module and the board's power, communication, debugging, storage, display, and expansion subsystems. This allows compatible MCU modules to be changed while retaining the same development platform.
+
+## Power Management
+
+ORBIT-Q uses two independent high-efficiency switching regulators to provide:
+
+| Rail  | Output | Maximum Current |
+|-------|--------|------------------|
+| 5 V   | 5.0 V  | 3 A              |
+| 3.3 V | 3.3 V  | 3 A              |
+
+The board accepts power through either a DC barrel jack or dedicated battery input pads, with an operating input range of 6 V to 16.8 V. Dedicated power headers are also provided for external circuits and peripherals.
+
+## User Interfaces
+
+### OLED Display
+
+ORBIT-Q includes an onboard 128 × 32 monochrome OLED connected through I²C.
+
+It can be used for:
+
+- System status
+- Menus
+- Sensor data
+- Debug information
+- User-defined graphics
+
+A jumper-based interface allows the OLED connection to be isolated from the MCU module.
+
+### RGB LEDs
+
+The board includes 10 WS2812B individually addressable RGB LEDs for:
+
+- Visual feedback
+- Status indication
+- Diagnostics
+- User applications
+
+The LED interface uses a single-wire digital data connection with configurable power and signal routing.
+
+## USB-to-UART
+
+A CP2102-GMR USB-to-UART bridge provides a USB serial interface between the host computer and the installed MCU module.
+
+The interface supports:
+
+- Firmware logging
+- Serial communication
+- Command-line interaction
+- Debugging
+
+Connection is provided through a USB Type-C connector.
+
+## M.2 E-Key Interface
+
+The ORBIT-Q platform uses a 75-position M.2 E-Key connector as its primary microcontroller interface.
+
+The connector provides access to:
+
+- Power
+- GPIO
+- UART
+- SPI
+- I²C
+- USB
+- SWD
+- Other MCU signals
+
+The installed module acts as the central processing element for the onboard subsystems and expansion interfaces.
+
+## I/O Expansion
+
+Three expansion headers provide access to 68 I/O signals from the installed microcontroller module.
+
+Supported signals include:
+
+- Digital GPIO
+- UART
+- SPI
+- I²C
+- PWM
+- ADC
+- USB
+- SWD
+- Power and Ground
+
+The headers use standard 2.54 mm spacing for prototyping and external hardware connections.
+
+## MicroSD Card
+
+ORBIT-Q includes an onboard microSD card interface using SPI.
+
+It can be used for:
+
+- Data logging
+- Firmware storage
+- Configuration files
+- Removable storage
+- Embedded application data
+
+The interface is connected to the MCU module through dedicated SPI signals.
+
+## ST-LINK Debugger
+
+An onboard STM32F103-based ST-LINK debugger provides programming and debugging for the installed MCU module through Serial Wire Debug (SWD).
+
+The debugger uses a dedicated USB Type-C connector and operates independently from the USB-to-UART bridge and MCU USB interface.
+
+## Development
+
+ORBIT-Q is designed for:
+
+- Embedded software development
+- Rapid prototyping
+- Hardware validation
+- Sensor and peripheral experimentation
+- Data logging
+- Custom embedded applications
+
+The modular architecture allows developers to work with compatible MCU modules without redesigning the entire development platform.
+
+## Documentation
+
+For detailed hardware information, pin assignments, jumper configurations, electrical specifications, and subsystem operation, see the [ORBIT-Q Datasheet & Hardware Reference Manual](docs/ORBIT-Q-Datasheet.pdf).
+
+Additional resources:
+
+- [Getting Started](docs/getting-started.md)
+- [Arduino](docs/arduino.md)
+- [MicroPython](docs/micropython.md)
+- [Projects](docs/projects.md)
+
+## License
+
+See the [LICENSE](LICENSE) file for details.
 ---
 
 ![Orbit-Q Board](<images/Yellow and Blue Modern Logistics Company Profile A4 Document.png>)
@@ -116,63 +268,14 @@ Arduino and ESP32 dominate India's embedded landscape on cost and tutorial volum
 
 The comparison that matters isn't bare board price — it's total cost to a working setup, once an external programmer, power supply, and breadboarded peripherals are accounted for. ORBIT-Q folds those into the board itself, and the M.2 card system means moving from a validation-tier MCU to a flagship-tier one doesn't require rebuilding the setup from scratch.
 
-!!! quote ""
-    First introduced to the r/embedded community without any product branding, as a blind technical validation test — 9,000+ views, a 98% upvote ratio, and direct feedback from engineers in the STM32 community.
-
 ---
 
-<div align="center" markdown>
-<div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;" markdown>
-<div style="width:48%; min-width:280px;" markdown>
-<video autoplay muted loop playsinline width="100%">
-  <source src="/Orbit-Q/images/videos/orbit-q-video-001.mp4" type="video/mp4">
-</video>
-</div>
-<div style="width:48%; min-width:280px;" markdown>
-<video autoplay muted loop playsinline width="100%">
-  <source src="/Orbit-Q/images/videos/orbit-q-python-example.mp4" type="video/mp4">
-</video>
-</div>
-</div>
-</div>
-
----
-
-## Quick Resources
-
-* 📄 **Datasheet:** [Download Orbit-Q Datasheet PDF](./Orbit-Q%20Datasheet.pdf)
-* 📷 **Board Photos:** [Browse the gallery](images/readme.md)
-
----
-<div class="grid cards" markdown>
-
--   :material-swap-horizontal-bold: **Swappable Compute Core**
-
-    ---
-
-    ORBIT-Q separates infrastructure from compute. The carrier provides onboard power delivery, debugging, display, and storage — the MCU itself is the only part that swaps, via a 75-position M.2 E-Key slot with a custom pinout mapping. Moving from a validation-tier MCU card to a flagship-tier one requires no rewiring and no new tooling.
+ORBIT-Q separates infrastructure from compute. The carrier provides onboard power delivery, debugging, display, and storage — the MCU itself is the only part that swaps, via a 75-position M.2 E-Key slot with a custom pinout mapping. Moving from a validation-tier MCU card to a flagship-tier one requires no rewiring and no new tooling.
 
 -   :material-tools: **Integrated Development Infrastructure**
 
     ---
 
-    ORBIT-Q ships with an onboard ST-Link + CP2102 debug and programming interface, a 128×32 OLED status display, 10× WS2812B addressable RGB LEDs, and onboard microSD storage — the peripherals most embedded projects end up breadboarding project after project, built in instead.
-
--   :material-flash: **Dual-Rail Power Delivery**
-
-    ---
-
-    A 24W dual-rail power system (5V @ 3A, 3.3V @ 3A) accepts 6.0V–16.8V DC input via barrel jack or battery solder pads, removing the need for a separate bench supply during development.
-
--   :material-vector-line: **Full GPIO and Peripheral Access**
-
-    ---
-
-    68 raw GPIO signals are broken out across three headers (A, B, C), alongside dedicated SPI, I²C, UART, and dual power rails routed through the M.2 connector to the MCU card — full access to the target processor's capability, not a reduced subset.
-
-</div>
-
-----
 
 ## License
 
