@@ -195,6 +195,8 @@ The debugger uses a dedicated USB Type-C connector and operates independently fr
 
 ## Development
 
+![Orbit-Q Board](images/WhatsApp%20Image%202026-09-15%20at%209.47.01%20PM%20(1).jpeg)
+
 ORBIT-Q is designed for:
 
 - Embedded software development
