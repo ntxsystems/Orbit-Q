@@ -3,16 +3,35 @@
 # ORBIT-Q
 **One Platform. Multiple MCU Possibilities.**
 
-![Status](https://img.shields.io/badge/Status-Active%20Development-success?style=for-the-badge)
-![STM32](https://img.shields.io/badge/STM32-03234C?style=for-the-badge&logo=stmicroelectronics&logoColor=00ECFF)
-![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Stable%20Release-2ea44f?style=for-the-badge)
+
+**Supported IDEs & Languages**
+
+![STM32CubeIDE](https://img.shields.io/badge/STM32CubeIDE-03234C?style=for-the-badge&logo=stmicroelectronics&logoColor=00ECFF)
+![VSCode](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
+![Arduino IDE](https://img.shields.io/badge/Arduino%20IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white)
+![Thonny IDE](https://img.shields.io/badge/Thonny%20IDE-FFDE57?style=for-the-badge&logo=python&logoColor=3776AB)
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
 ![MicroPython](https://img.shields.io/badge/MicroPython-2B2728?style=for-the-badge&logo=micropython&logoColor=white)
+
+**Supported Microcontrollers**
+
+![STM32F1](https://img.shields.io/badge/STM32F1-03234C?style=for-the-badge&logo=stmicroelectronics&logoColor=00ECFF)
+![STM32F4](https://img.shields.io/badge/STM32F4-03234C?style=for-the-badge&logo=stmicroelectronics&logoColor=00ECFF)
+![STM32F7](https://img.shields.io/badge/STM32F7-03234C?style=for-the-badge&logo=stmicroelectronics&logoColor=00ECFF)
+![STM32H7](https://img.shields.io/badge/STM32H7-03234C?style=for-the-badge&logo=stmicroelectronics&logoColor=00ECFF)
+![RP2040](https://img.shields.io/badge/RP2040-A22846?style=for-the-badge&logo=raspberrypi&logoColor=white)
+![RP2350](https://img.shields.io/badge/RP2350-A22846?style=for-the-badge&logo=raspberrypi&logoColor=white)
+![ESP32](https://img.shields.io/badge/ESP32-E7352C?style=for-the-badge&logo=espressif&logoColor=white)
+![CDAC VEGA ET1031](https://img.shields.io/badge/CDAC%20VEGA%20ET1031-RISC--V-4B0082?style=for-the-badge&logo=riscv&logoColor=white)
+![NXP](https://img.shields.io/badge/NXP-0A3161?style=for-the-badge&logo=nxp&logoColor=white)
+![nRF52/54](https://img.shields.io/badge/nRF52%2F54-00A9CE?style=for-the-badge&logo=nordicsemiconductor&logoColor=white)
 
 </div>
 
 ---
 
-ORBIT-Q is a modular embedded development platform built around a 75-position M.2 E-Key connector for compatible microcontroller modules. It combines power management, debugging, USB-to-UART, display, storage, RGB LEDs, and I/O expansion into a single development platform for rapid prototyping, embedded software development, and hardware validation.
+ORBIT-Q is a development board from NTX Systems Pvt. Ltd. that doesn't force you to start over every time your project changes. Instead of buying a new board for every new microcontroller, you just swap the card — the base unit stays the same, already equipped with power, programming, a display, and storage. Beginners can start simple and move up to more advanced cards later, all on the same board, using tools as familiar as the Arduino IDE. It's a made-in-India alternative to the imported boards most Indian students and engineers rely on today.
 
 ![Orbit-Q Board](images/vibe3d-render-64e02aa3.jpg)
 
