@@ -32,6 +32,6 @@ Have a question about Orbit-Q, need technical support, or want to share feedback
 
 **Other ways to reach us**
 
-- **Email:** [siddhantgupta1502@gmail.com](mailto:siddhantgupta1502@gmail.com)
+- **Email:** [ntxsystems24@gmail.com](mailto:ntxsystems24@gmail.com)
 - **Location:** Lucknow, Uttar Pradesh, India
 - **GitHub:** [github.com/ntxsystems](https://github.com/ntxsystems)
