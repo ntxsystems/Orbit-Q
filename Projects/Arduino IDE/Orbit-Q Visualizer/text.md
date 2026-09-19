@@ -753,6 +753,14 @@ else if (elapsed > dur - TRANSITION_MS) fade = (dur - elapsed) / TRANSITION_MS; 
 * Wire OLED to I2C1, strip data to PB3, confirm 3.3V power to both.
 * Upload. On first boot, you should see the NTX wordmark slide in, followed by the LED color-chase, then Mode 0 starting.
 
+<div align="center" markdown>
+
+<video autoplay muted loop playsinline width="50%">
+  <source src="/Orbit-Q/Projects/Arduino IDE/Orbit-Q Visualizer/media/VID_20260916_184059.mp4">
+</video>
+
+</div>
+
 ### 11. Tuning it for your own build
 * Overall speed: `PHASE_STEP` — smaller = slower, larger = faster. This shifts every mode at once since they all share `phase`.
 * Time per mode: edit `MODE_DURATION[]` — each entry is milliseconds for that mode index.
