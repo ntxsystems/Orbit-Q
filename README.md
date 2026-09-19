@@ -219,4 +219,5 @@ Additional resources:
 
 See the [LICENSE](LICENSE) file for details.
 All documentation, sample code, and software drivers in this repository are released under the [MIT License](LICENSE). Hardware designs, layout files, and product specifications remain the proprietary IP of **NTX Systems Pvt. Ltd.**
+
 ---
