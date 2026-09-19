@@ -755,7 +755,7 @@ else if (elapsed > dur - TRANSITION_MS) fade = (dur - elapsed) / TRANSITION_MS; 
 
 <div align="center" markdown>
 
-<video autoplay muted loop playsinline width="50%">
+<video autoplay muted loop playsinline width="100%">
   <source src="/Orbit-Q/Projects/Arduino IDE/Orbit-Q Visualizer/media/VID_20260916_184059.mp4">
 </video>
 
