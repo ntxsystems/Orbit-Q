@@ -63,6 +63,8 @@ ORBIT-Q is a development board from NTX Systems Pvt. Ltd. that doesn't force you
 - [Documentation](#documentation)
 - [License](#license)
 
+![Orbit-Q Board](images/WhatsApp%20Image%202026-09-15%20at%209.47.03%20PM.jpeg)
+
 ## Features
 
 - Modular M.2 E-Key MCU architecture
