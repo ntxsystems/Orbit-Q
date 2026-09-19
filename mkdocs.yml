@@ -51,10 +51,6 @@ markdown_extensions:
 
 nav:
   - Home: README.md
-  - Products:
-      - Orbit-Q: "Products/Orbit-Q_Base-Board/text.md"
-  - Services: "Services/text.md"
-  - Gallery: images/readme.md
   - Datasheet: "Orbit-Q Datasheet.pdf"
   - Projects: 
       - Arduino IDE:
