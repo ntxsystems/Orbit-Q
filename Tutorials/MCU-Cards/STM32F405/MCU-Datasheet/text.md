@@ -61,11 +61,11 @@ This documentation outlines the hardware specifications, layout features, and pi
 ### Core Specifications
 
 - Microcontroller: STMicroelectronics STM32F405RGT6 (ARM Cortex-M4 32-bit RISC core with FPU)
-- Operating Frequency: Up to $168\,\text{MHz}$
-- Flash Memory: $1\,\text{MB}$
-- SRAM: $192\,\text{KB}$ (+ $4\,\text{KB}$ backup SRAM)
-- Clock Source: $8\,\text{MHz}$ High-Speed External (HSE) crystal oscillator (Note: No OSC32 low-speed crystal installed)
-- Operating Voltage: $3.3\,\text{V}$ nominal input, regulated via onboard safety components
+- Operating Frequency: Up to 168 MHz
+- Flash Memory: 1 MB
+- SRAM: 192 KB (+ 4 KB backup SRAM)
+- Clock Source: 8 MHz High-Speed External (HSE) crystal oscillator (Note: No OSC32 low-speed crystal installed)
+- Operating Voltage: 3.3 V nominal input, regulated via onboard safety components
 - Part Number: `D091125APTYF405A01`
 
 <div align="center" markdown>
