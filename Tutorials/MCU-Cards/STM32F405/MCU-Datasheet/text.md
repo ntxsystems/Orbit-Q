@@ -102,7 +102,7 @@ Because `PC13` is utilized by the onboard status LED, it is omitted from the sta
 
 ## 1. Complete M.2 Pinout Mapping (Pins 1–68)
 
-| Pin (Left) | Signal / Function | Pin (Right) | Signal / Function |
+| Pin | Signal / Function | Pin | Signal / Function |
 | :---: | :--- | :---: | :--- |
 | **1** | VCC (3.3V / VIN) | **2** | VCC (3.3V / VIN) |
 | **3** | GND | **4** | GND |
@@ -161,7 +161,7 @@ Because `PC13` is utilized by the onboard status LED, it is omitted from the sta
 
 | Pin No. | Pin name after reset | Pin type | I/O structure | Alternate functions | Additional functions |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Solder Pad | `PC13` | I/O | FT | EVENTOUT | RTC_AF1 |
+|  | `PC13` | I/O | FT | EVENTOUT | RTC_AF1 |
 | 49 | `PC14-OSC32_IN (PC14)` | I/O | FT | EVENTOUT | OSC32_IN(4) |
 | 50 | `PC15- OSC32_OUT (PC15)` | I/O | FT | EVENTOUT | OSC32_OUT |
 | 34 | `PC0` | I/O | FT | OTG_HS_ULPI_STP/ EVENTOUT | ADC123_IN10 |
