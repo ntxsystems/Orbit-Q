@@ -74,8 +74,8 @@ This documentation outlines the hardware specifications, layout features, and pi
 
 ### Power Management & Safety
 
-- Reverse Polarity Protection: The $3.3\,\text{V}$ power input line features an integrated hardware reverse polarity protection circuit to prevent damage from incorrect power supply connections.
-- Power LED: An onboard power indicator LED wired directly to the $3.3\,\text{V}$ rail indicates active power status
+- Reverse Polarity Protection: The 3.3 V power input line features an integrated hardware reverse polarity protection circuit to prevent damage from incorrect power supply connections.
+- Power LED: An onboard power indicator LED wired directly to the 3.3 V rail indicates active power status
 
 ### Onboard Controls & User Interface
 
