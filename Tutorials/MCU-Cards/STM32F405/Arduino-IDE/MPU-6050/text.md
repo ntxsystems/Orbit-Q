@@ -376,7 +376,7 @@ The existing labels are retained:
 
 The sketch preserves the original OLED drawing commands. Since the display is only 128 × 32 pixels, all six printed lines may not be visible simultaneously. A future display-layout improvement could address this without changing the sensor calculations.
 
-## 12. Troubleshooting
+## 14. Troubleshooting
 
 | Problem | What to check |
 |---|---|
@@ -389,7 +389,7 @@ The sketch preserves the original OLED drawing commands. Since the display is on
 | Readings show a persistent offset | Check sensor bias and calibration; filtering alone does not remove bias |
 
 
-## 13. Conclusion
+## 15. Conclusion
 
 This project demonstrates MPU-6050 interfacing, I²C communication, physical-unit conversion, basic Kalman filtering, OLED display output, and serial debugging on an STM32F405 platform.
 
