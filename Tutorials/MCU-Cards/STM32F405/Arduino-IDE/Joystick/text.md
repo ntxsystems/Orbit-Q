@@ -343,7 +343,7 @@ The joystick position is represented visually using a circular indicator inside 
 
 ### Result
 
-The joystick module was successfully interfaced with the ORBIT-Q STM32F405 development board. Horizontal movement, vertical movement and push-button operations were detected and displayed on the OLED screen.
+The joystick module was successfully interfaced with the ORBIT-Q STM32F405 development board. Horizontal movement, vertical movement and push-button operations were detected and displayed on the OLED screen..
 
 
 ## 10. Troubleshooting
