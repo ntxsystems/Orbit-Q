@@ -345,37 +345,8 @@ The joystick position is represented visually using a circular indicator inside 
 
 The joystick module was successfully interfaced with the ORBIT-Q STM32F405 development board. Horizontal movement, vertical movement and push-button operations were detected and displayed on the OLED screen.
 
-## 10. Hardware Setup and Demonstration
 
-The project was tested using the actual ORBIT-Q STM32F405 development board and two-axis joystick module.
-
-The following photographs and video demonstrate the hardware setup, joystick connections and working output.
-
-### 10.1 Complete Hardware Setup
-
-Add the photograph showing the complete ORBIT-Q development board and connected joystick module.
-
-**Image:** `images/joystick-hardware-setup.jpg`
-
-### 10.2 Joystick Sensor Connections
-
-Add the close-up photograph showing the joystick module and its five-pin connections.
-
-**Image:** `images/joystick-sensor-connections.jpg`
-
-### 10.3 Joystick and OLED Output
-
-Add the photograph showing the joystick position indicator and readings on the OLED display.
-
-**Image:** `images/joystick-oled-output.jpg`
-
-### 10.4 Working Demonstration Video
-
-Add the recorded demonstration video showing joystick movement and button operation.
-
-**Video:** `Videos/joystick-working-demo.mp4`
-
-## 11. Troubleshooting
+## 10. Troubleshooting
 
 | Problem | Possible Solution |
 |---|---|
@@ -388,7 +359,7 @@ Add the recorded demonstration video showing joystick movement and button operat
 | OLED not displaying output | Check OLED power, I²C connections and address. |
 | Compilation errors | Verify STM32 board support and installed libraries. |
 
-## 12. Applications
+## 11. Applications
 
 - Robotics and robot control systems.
 - Gaming controllers.
@@ -399,7 +370,7 @@ Add the recorded demonstration video showing joystick movement and button operat
 - Drone control interfaces.
 - Human-machine interaction systems.
 
-## 13. Future Improvements
+## 12. Future Improvements
 
 - Wireless joystick control using Bluetooth or Wi-Fi.
 - Integration with robotic motors and servos.
@@ -409,7 +380,7 @@ Add the recorded demonstration video showing joystick movement and button operat
 - Integration with robotics and IoT applications.
 - Wireless control of embedded devices.
 
-## 14. Conclusion
+## 13. Conclusion
 
 The two-axis analog joystick module was successfully interfaced with the ORBIT-Q STM32F405RGTX development board using Arduino IDE.
 
