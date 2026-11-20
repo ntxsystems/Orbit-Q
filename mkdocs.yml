@@ -67,6 +67,9 @@ nav:
                   - Oled Display Example: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Oled-Display-Example/text.md"
                   - SD-Card Example: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/SD-Card-Example/text.md"
                   - MPU-6050: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/MPU-6050/text.md"
+                  - BMP280: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/BMP280/text.md"
+                  - HMC5883L: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/HMC5883L/text.md"
+                  - Joystick: "Tutorials/MCU-Cards/STM32F405/Arduino-IDE/Joystick/text.md"
               - Micro Python:
                   - LED Blink: "Tutorials/MCU-Cards/STM32F405/Micro-Python/LED-Blink-Example/text.md"
   - Contact-Us: "Contact-Us/text.md"
