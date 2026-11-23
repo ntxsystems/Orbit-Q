@@ -2,9 +2,9 @@
 
 ## 1. Project Overview
 
-This project demonstrates interfacing a BMP280 digital temperature and barometric pressure sensor with the ORBIT-Q STM32F405RGT6 development board.
+This project demonstrates interfacing a BMP280 digital temperature and barometric pressure sensor with the `ORBIT-Q STM32F405RGT6` development board.
 
-The BMP280 measures temperature and atmospheric pressure. The system also calculates estimated altitude using atmospheric pressure.
+The `BMP280` measures temperature and atmospheric pressure. The system also calculates estimated altitude using atmospheric pressure.
 
 The sensor communicates with the microcontroller through I²C2, while an SSD1306 OLED display uses I²C1 to display the measurements in real time.
 
@@ -12,7 +12,7 @@ The BMP280 module has six pins, but only four connections are used in this proje
 
 ## 2. Objectives
 
-- Interface the BMP280 sensor with the ORBIT-Q STM32F405 development board.
+- Interface the BMP280 sensor with the `ORBIT-Q STM32F405 development board`.
 - Establish I²C communication between the sensor and microcontroller.
 - Measure temperature and atmospheric pressure.
 - Calculate estimated altitude.
@@ -25,23 +25,23 @@ The BMP280 module has six pins, but only four connections are used in this proje
 
 | Component | Description |
 |---|---|
-| Development Board | ORBIT-Q STM32F405RGT6 |
-| Sensor | BMP280 six-pin module |
-| Display | SSD1306 OLED, 128 × 32 pixels |
-| Connecting Wires | Jumper wires |
+| Development Board | `ORBIT-Q STM32F405RGT6` |
+| Sensor | `BMP280` six-pin module |
+| Display | `SSD1306 OLED, 128 × 32 pixels `|
+| Connecting Wires | `Jumper wires` |
 | Power Supply | External power adapter |
-| Programming Connection | USB cable |
+| Programming Connection | `USB cable` |
 
 ### Software Requirements
 
-- Arduino IDE
-- STM32 board support package
+- `Arduino IDE`
+- `STM32 board support package`
 
 ### Install Libraries in Arduino-IDE
 
-- Adafruit BMP280 Library
-- Adafruit GFX Library
-- Adafruit SSD1306 Library
+- ``Adafruit BMP280 Library``
+- ``Adafruit GFX Library``
+- ``Adafruit SSD1306 Library``
 
 ## 4. Hardware Connections
 
@@ -51,12 +51,12 @@ The project uses two independent I²C interfaces.
 
 ### 4.1 BMP280 Sensor Connections
 
-| BMP280 Pin | ORBIT-Q STM32F405 Pin |
+| **BMP280 Pin** | **ORBIT-Q STM32F405 Pin** |
 |---|---|
 | VCC | 3.3V |
 | GND | GND |
-| SCL | PB10 (Pin 17) |
-| SDA | PB11 (Pin 16) |
+| SCL | `PB10 (Pin 17)` |
+| SDA | `PB11 (Pin 16)` |
 
 **Note:** Although the BMP280 module has six pins, only four connections are used in this project.
 
@@ -64,14 +64,14 @@ The project uses two independent I²C interfaces.
 
 | Device | Interface | SDA | SCL |
 |---|---|---|---|
-| BMP280 | I²C2 | PB11 | PB10 |
-| OLED | I²C1 | PB7 | PB6 |
+| BMP280 | `I²C2` | `PB11` | `PB10` |
+| OLED | `I²C1` | `PB7` | `PB6` |
 
 Both I²C interfaces operate at 400 kHz. 
 
 ## 5. Working Principle
 
-The BMP280 is a digital environmental sensor manufactured by Bosch Sensortec.
+The  `BMP280` is a digital environmental sensor manufactured by Bosch Sensortec.
 
 It measures two primary parameters:
 
@@ -81,17 +81,17 @@ It measures two primary parameters:
 
 **Estimated Altitude:** Uses atmospheric pressure and a reference sea-level pressure to estimate altitude in metres (m).
 
-The measured values are displayed on the SSD1306 OLED screen.
+The measured values are displayed on the `SSD1306 OLED screen`.
 
 The project uses a default sea-level pressure reference of 1013.25 hPa. This value can be adjusted according to local sea-level pressure for improved altitude estimation.
 
 ## 6. Project Setup and Implementation
 
-The project is implemented using Arduino IDE and the ORBIT-Q STM32F405RGT6 development board.
+The project is implemented using Arduino IDE and the `ORBIT-Q STM32F405RGTX development board`.
 
 The hardware setup involves:
 
-1. Connecting the BMP280 sensor to the I²C2 interface.
+1. Connecting the `BMP280 sensor` to the I²C2 interface.
 2. Connecting the OLED display to the I²C1 interface.
 3. Providing power to the development board using an external power adapter.
 4. Uploading the Arduino sketch through the appropriate USB programming connection.
@@ -102,9 +102,9 @@ The hardware setup involves:
 1. Open Arduino IDE.
 2. Install the required libraries.
 3. Open the BMP280 project `.ino` file.
-4. Select the appropriate STM32F405 board configuration.
+4. Select the appropriate `STM32F405` board configuration.
 5. Select the appropriate upload method.
-6. Connect the ORBIT-Q board to the computer.
+6. Connect the `ORBIT-Q board` to the computer.
 7. Compile and upload the program.
 8. Power the board using the external power adapter.
 9. Observe the OLED display for live measurements.
@@ -183,9 +183,9 @@ void loop() {
 
 ## 9. Testing and Experimental Results
 
-The BMP280 sensor was tested using the ORBIT-Q STM32F405RGT6 development board.
+The `BMP280 sensor` was tested using the `ORBIT-Q STM32F405RGTX development board`.
 
-After connecting the sensor and powering the board, the sensor measurements were displayed on the SSD1306 OLED.
+After connecting the sensor and powering the board, the sensor measurements were displayed on the `SSD1306 OLED`.
 
 ### 9.1 Observed Output
 
@@ -275,7 +275,7 @@ Add the recorded video demonstrating the working project.
 
 ## 14. Conclusion
 
-The BMP280 sensor was successfully interfaced with the ORBIT-Q STM32F405RGT6 development board using Arduino IDE.
+The `BMP280` sensor was successfully interfaced with the `ORBIT-Q STM32F405RGTX` development board using Arduino IDE.
 
 The project demonstrates practical implementation of I²C communication, temperature measurement, atmospheric pressure measurement, altitude estimation and OLED display integration.
 
